@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --sedGreen: 135.1, 58.4%, 45.3%; /* #30b752 */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
