@@ -28,7 +28,7 @@ export default function Footer() {
           <Email />
         </div>
 
-        <div className="flex md:flex-col justify-between mt-12 w-full md:w-auto max-w-80">
+        <div className="flex md:flex-col justify-between mt-10 md:mt-16 w-full md:w-auto max-w-80">
           <Link
             href={"/"}
             className="hover:text-sedGreen transition duration-160 ease-in-out mt-2 text-sm text-gray-600"
