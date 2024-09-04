@@ -22,6 +22,10 @@ const config = {
     },
 
     extend: {
+      fontFamily: {
+        outfit: ["Outfit", "sans-serif"],
+      },
+
       colors: {
         sedGreen: "hsl(var(--sedGreen))",
         border: "hsl(var(--border))",
