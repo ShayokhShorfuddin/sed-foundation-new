@@ -44,7 +44,7 @@ export default function Navbar() {
 
       <Button
         variant={"ghost"}
-        className="md:hidden"
+        className="lg:hidden"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? <XIcon size={24} /> : <Menu size={24} />}
@@ -52,45 +52,47 @@ export default function Navbar() {
 
       {/* For mobile screen */}
       {isMenuOpen && (
-        <div className="absolute top-16 z-20 left-0 right-0 bg-white shadow-md p-4 md:hidden [&_li]:py-1">
+        <div className="absolute top-16 sm:top-20 lg:top-16 lg z-20 left-0 right-0 bg-white shadow-md p-5 lg:hidden [&_li]:py-1">
           <ul className="space-y-2">
-            <li>
-              <Link href={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link href={"/"}>About</Link>
-            </li>
-            <li>
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item">
-                  <AccordionTrigger className="text-left">
-                    Programs
-                  </AccordionTrigger>
+            <div className="block sm:hidden">
+              <li>
+                <Link href={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link href={"/"}>About</Link>
+              </li>
+              <li>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item">
+                    <AccordionTrigger className="text-left">
+                      Programs
+                    </AccordionTrigger>
 
-                  <AccordionContent className="text-left mt-4 ml-4">
-                    <Link href={"/climate-action"}>Climate Action</Link>
-                  </AccordionContent>
+                    <AccordionContent className="text-left mt-4 ml-4">
+                      <Link href={"/climate-action"}>Climate Action</Link>
+                    </AccordionContent>
 
-                  <AccordionContent className="text-left mt-4 ml-4">
-                    <Link href={"/research-publication"}>
-                      Research & Publications
-                    </Link>
-                  </AccordionContent>
+                    <AccordionContent className="text-left mt-4 ml-4">
+                      <Link href={"/research-publication"}>
+                        Research & Publications
+                      </Link>
+                    </AccordionContent>
 
-                  <AccordionContent className="text-left mt-4 ml-4">
-                    <Link href={"/environmental-autumn-school"}>
-                      Environmental Autumn School
-                    </Link>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </li>
-            <li>
-              <Link href={"/"}>News & Events</Link>
-            </li>
-            <li>
-              <Link href={"/"}>Contact</Link>
-            </li>
+                    <AccordionContent className="text-left mt-4 ml-4">
+                      <Link href={"/environmental-autumn-school"}>
+                        Environmental Autumn School
+                      </Link>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </li>
+              <li>
+                <Link href={"/"}>News & Events</Link>
+              </li>
+              <li>
+                <Link href={"/"}>Contact</Link>
+              </li>
+            </div>
 
             <li>
               <div className="flex mt-3">
@@ -122,12 +124,12 @@ export function Navlinks() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <NavigationMenu className="hidden md:block">
+    <NavigationMenu className="hidden sm:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuLink
             asChild
-            className="mr-7 hover:text-sedGreen transition duration-160 ease-in-out"
+            className="mr-4 md:mr-7 hover:text-sedGreen transition duration-160 ease-in-out"
           >
             <Link href={"/"}>Home</Link>
           </NavigationMenuLink>
@@ -136,7 +138,7 @@ export function Navlinks() {
         <NavigationMenuItem>
           <NavigationMenuLink
             asChild
-            className="mr-7 hover:text-sedGreen transition duration-160 ease-in-out"
+            className="mr-4 md:mr-7 hover:text-sedGreen transition duration-160 ease-in-out"
           >
             <Link href={"/"}>About</Link>
           </NavigationMenuLink>
@@ -144,7 +146,7 @@ export function Navlinks() {
 
         <NavigationMenuItem>
           <HoverCard>
-            <HoverCardTrigger className="mr-7 hover:text-sedGreen transition duration-160 ease-in-out">
+            <HoverCardTrigger className="mr-4 md:mr-7 hover:text-sedGreen transition duration-160 ease-in-out">
               Programs
             </HoverCardTrigger>
 
@@ -171,7 +173,7 @@ export function Navlinks() {
         <NavigationMenuItem>
           <NavigationMenuLink
             asChild
-            className="mr-7 hover:text-sedGreen transition duration-160 ease-in-out"
+            className="mr-4 md:mr-7 hover:text-sedGreen transition duration-160 ease-in-out"
           >
             <Link href={"/"}>News & Events</Link>
           </NavigationMenuLink>
@@ -192,7 +194,7 @@ export function Navlinks() {
 
 export function SocialMedias() {
   return (
-    <div className="hidden md:flex">
+    <div className="hidden lg:flex">
       <Link href={"https://www.facebook.com/"}>
         <Image src={Facebook} alt="SED Facebook" className="mr-6" />
       </Link>
