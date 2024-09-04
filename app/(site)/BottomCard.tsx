@@ -14,7 +14,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 export default function BottomCard() {
   return (
     <section className="flex justify-center items-center mt-24 md:mt-40 mx-5 sm:mx-10">
-      <div className="w-[1200px] flex flex-col md:flex-row justify-between items-center p-12 border border-sedGreen rounded-xl text-center md:text-left">
+      <div className="w-full max-w-[1200px] flex flex-col md:flex-row justify-between items-center p-12 border border-sedGreen rounded-xl text-center md:text-left">
         <h1 className="text-2xl sm:text-3xl font-outfit leading-snug md:pr-5">
           We Can Protect <span className="text-sedGreen">Nature</span>
           <br />
