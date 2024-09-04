@@ -23,6 +23,7 @@ const config = {
 
     extend: {
       colors: {
+        sedGreen: "hsl(var(--sedGreen))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
