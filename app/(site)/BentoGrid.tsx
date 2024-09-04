@@ -122,7 +122,7 @@ function Card5Mobile() {
 
 function Card4Mobile() {
   return (
-    <div className="relative h-52 overflow-hidden rounded-md mt-5">
+    <div className="relative h-52 overflow-hidden rounded-lg mt-5">
       <Image
         priority
         src={ForestWide}
