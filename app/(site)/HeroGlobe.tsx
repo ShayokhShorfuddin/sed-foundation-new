@@ -397,7 +397,7 @@ export function GlobeObject() {
   ];
 
   return (
-    <div className="w-[400px] lg:w-[500px] h-[350px] md:h-[390px] lg:h-[400px] xl:h-[520px] mt-10 lg:mt-0 self-center lg:self-auto hidden lg:block">
+    <div className="w-[390px] xl:w-[510px] h-[350px] md:h-[390px] lg:h-[400px] xl:h-[520px] mt-10 lg:mt-0 self-center lg:self-auto hidden lg:block">
       <World data={sampleArcs} globeConfig={globeConfig} />
     </div>
   );
