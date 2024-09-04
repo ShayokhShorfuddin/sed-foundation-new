@@ -93,7 +93,8 @@ export default function BentoGrid() {
         <Card4 />
         <Card5 />
       </div>
-      <div className="flex flex-col sm:hidden w-full">
+
+      <div className="grid grid-cols-2 w-full gap-4 sm:hidden">
         <Card1Mobile />
         <Card5Mobile />
         <Card4Mobile />
@@ -104,7 +105,7 @@ export default function BentoGrid() {
 
 function Card1Mobile() {
   return (
-    <div className="flex flex-col justify-center items-center rounded-xl border border-gray-200 hover:border-sedGreen p-5 transition duration-200 ease-in-out">
+    <div className="col-span-2 xs:col-span-1 flex flex-col justify-center items-center rounded-xl border border-gray-200 hover:border-sedGreen p-5 transition duration-200 ease-in-out">
       <h1 className="text-4xl font-outfit">12k</h1>
       <p className="mt-2">Volunteers</p>
     </div>
@@ -113,7 +114,7 @@ function Card1Mobile() {
 
 function Card5Mobile() {
   return (
-    <div className="flex flex-col justify-center items-center rounded-xl border border-gray-200 hover:border-sedGreen mt-5 p-5 transition duration-200 ease-in-out">
+    <div className="col-span-2 xs:col-span-1 flex flex-col justify-center items-center rounded-xl border border-gray-200 hover:border-sedGreen p-5 transition duration-200 ease-in-out">
       <h1 className="text-4xl font-outfit">36k</h1>
       <p className="mt-2">Trees Planted</p>
     </div>
@@ -122,7 +123,7 @@ function Card5Mobile() {
 
 function Card4Mobile() {
   return (
-    <div className="relative h-52 overflow-hidden rounded-lg mt-5">
+    <div className="col-span-2 relative h-52 overflow-hidden rounded-xl">
       <Image
         priority
         src={ForestWide}
