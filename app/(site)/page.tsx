@@ -1,7 +1,9 @@
+import Navbar from "./Navbar";
+
 export default function Home() {
   return (
     <main>
-      <h1>Hello World</h1>
+      <Navbar />
     </main>
   );
 }

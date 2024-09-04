@@ -3,10 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.jpg";
-import Facebook from "@/public/facebook.svg";
-import X from "@/public/x.svg";
-import Linkedin from "@/public/linkedin.svg";
-import Youtube from "@/public/youtube.svg";
+import Facebook from "@/public/social-media/facebook.svg";
+import X from "@/public/social-media/x.svg";
+import Linkedin from "@/public/social-media/linkedin.svg";
+import Youtube from "@/public/social-media/youtube.svg";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
@@ -32,7 +32,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 
-export default function TopHeading() {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -166,26 +166,6 @@ export function Navlinks() {
               </div>
             </HoverCardContent>
           </HoverCard>
-
-          {/* <DropdownMenu>
-            <DropdownMenuTrigger className="mr-7 hover:text-sedGreen transition duration-160 ease-in-out">
-              Programs
-            </DropdownMenuTrigger>
-
-            <DropdownMenuContent>
-              <Link href={"/climate-action"}>
-                <DropdownMenuItem>Climate Action</DropdownMenuItem>
-              </Link>
-
-              <Link href={"/research-publication"}>
-                <DropdownMenuItem>Research & Publications</DropdownMenuItem>
-              </Link>
-
-              <Link href={"/environmental-autumn-school"}>
-                <DropdownMenuItem>Environmental Autumn School</DropdownMenuItem>
-              </Link>
-            </DropdownMenuContent>
-          </DropdownMenu> */}
         </NavigationMenuItem>
 
         <NavigationMenuItem>
