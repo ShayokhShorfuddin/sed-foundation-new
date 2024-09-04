@@ -124,7 +124,7 @@ export function Navlinks() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <NavigationMenu className="hidden sm:block">
+    <NavigationMenu className="hidden sm:block text-nowrap">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuLink
