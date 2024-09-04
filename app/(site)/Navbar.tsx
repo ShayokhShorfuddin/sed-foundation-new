@@ -20,12 +20,6 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
   Accordion,
   AccordionContent,
   AccordionItem,
