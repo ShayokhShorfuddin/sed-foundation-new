@@ -7,6 +7,14 @@ import ForestRound4 from "@/public/forest-round4.jpg";
 import Scientist from "@/public/scientist.jpg";
 import Image, { StaticImageData } from "next/image";
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 export default function Choice() {
   return (
     <section className="flex flex-col items-center mt-36">
@@ -45,6 +53,7 @@ export default function Choice() {
         />
       </div>
 
+      {/* Grid for big screens */}
       <div
         className="hidden sm:grid grid-cols-3 gap-4 w-full max-w-[1200px]
       px-4 mt-10"
