@@ -1,5 +1,6 @@
 import BentoGrid from "./BentoGrid";
 import BottomCard from "./BottomCard";
+import Choice from "./Choice";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
 import Hero from "./Hero";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <BentoGrid />
+      <Choice />
       <FAQ />
       <BottomCard />
       <Footer />
