@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ChevronUp } from "lucide-react";
 
@@ -14,10 +13,10 @@ export default function MoveUpButton() {
 
   return (
     <Button
-      className="fixed right-5 bottom-5 rounded-full bg-sedGreen z-10"
+      className="fixed right-5 bottom-5 size-12 flex items-center justify-center rounded-full bg-sedGreen z-10"
       onClick={scrollToTop}
     >
-      <ChevronUp className="w-6 h-6" />
+      <ChevronUp className="size-full" />
     </Button>
   );
 }
