@@ -44,8 +44,9 @@ export default function Choice() {
           className="absolute hidden lg:block -right-44 top-10 size-14 rounded-full ring-2 ring-sedGreen ring-offset-4 hover:ring-offset-8 transform duration-300 ease-in-out"
         />
       </div>
+
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-[1200px]
+        className="hidden sm:grid grid-cols-3 gap-4 w-full max-w-[1200px]
       px-4 mt-10"
       >
         <ChoiceCard
@@ -62,7 +63,6 @@ export default function Choice() {
           title="Research"
           description="Contribute to scientific advancements."
           image={Scientist}
-          className="col-span-1 sm:col-span-2 md:col-span-1"
         />
       </div>
     </section>
@@ -73,15 +73,13 @@ function ChoiceCard({
   title,
   description,
   image,
-  className,
 }: {
   title: string;
   description: string;
   image: StaticImageData;
-  className?: string;
 }) {
   return (
-    <div className={`relative rounded-xl overflow-hidden ${className}`}>
+    <div className="relative rounded-xl overflow-hidden">
       <Image
         priority
         src={image}
