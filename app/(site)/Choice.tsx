@@ -53,9 +53,9 @@ export default function Choice() {
         />
       </div>
 
-      {/* Grid for big screens */}
+      {/* Horizontal Grid for big screens */}
       <div
-        className="hidden sm:grid grid-cols-3 gap-4 w-full max-w-[1200px]
+        className="grid xs:hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-[1200px]
       px-4 mt-10"
       >
         <ChoiceCard
@@ -74,6 +74,38 @@ export default function Choice() {
           image={Scientist}
         />
       </div>
+
+      {/*TODO: Carousel for small screens */}
+      <Carousel className="hidden xs:block md:hidden sm w-full max-w-xs mt-10">
+        <CarouselContent>
+          <CarouselItem>
+            <ChoiceCard
+              title="Volunteer"
+              description="Work with us side by side."
+              image={Volunteer}
+            />
+          </CarouselItem>
+
+          <CarouselItem>
+            <ChoiceCard
+              title="Sponsor"
+              description="Fund us to accelerate our mission."
+              image={Handshake}
+            />
+          </CarouselItem>
+
+          <CarouselItem>
+            <ChoiceCard
+              title="Research"
+              description="Contribute to scientific advancements."
+              image={Scientist}
+            />
+          </CarouselItem>
+        </CarouselContent>
+
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </section>
   );
 }
