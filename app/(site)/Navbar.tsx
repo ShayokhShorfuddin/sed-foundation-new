@@ -32,6 +32,18 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 
+import { PhoneCall, Location, Email } from "./BottomCard";
+import {
+  AlertDialog,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -90,7 +102,7 @@ export default function Navbar() {
                 <Link href={"/"}>News & Events</Link>
               </li>
               <li>
-                <Link href={"/"}>Contact</Link>
+                <NavbarDialogButton />
               </li>
             </div>
 
@@ -180,15 +192,37 @@ export function Navlinks() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className="hover:text-sedGreen transition duration-160 ease-in-out"
-          >
-            <Link href={"/"}>Contact</Link>
-          </NavigationMenuLink>
+          <NavbarDialogButton />
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
+  );
+}
+
+function NavbarDialogButton() {
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <p className="hover:cursor-pointer">Contact Us</p>
+      </AlertDialogTrigger>
+
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Contact Us</AlertDialogTitle>
+          <AlertDialogDescription>
+            Get in touch with our professional team.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+
+        <PhoneCall />
+        <Location />
+        <Email />
+
+        <AlertDialogFooter>
+          <AlertDialogCancel>Close</AlertDialogCancel>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 }
 

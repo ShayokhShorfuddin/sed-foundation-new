@@ -63,7 +63,7 @@ function DialogButton() {
   );
 }
 
-function Location() {
+export function Location() {
   return (
     <div className="flex mt-2">
       <MapPin className="mr-2" />
@@ -78,7 +78,7 @@ function Location() {
   );
 }
 
-function PhoneCall() {
+export function PhoneCall() {
   return (
     <div className="flex items-center mt-3">
       <Phone className="mr-2" />
@@ -92,7 +92,7 @@ function PhoneCall() {
   );
 }
 
-function Email() {
+export function Email() {
   return (
     <div className="flex mt-2">
       <Mail className="mr-2" />
