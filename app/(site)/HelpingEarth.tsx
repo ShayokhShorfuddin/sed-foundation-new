@@ -6,7 +6,7 @@ export default function HelpingEarth() {
   return (
     <section className="container flex flex-col lg:flex-row items-center lg:items-start justify-center mt-28 lg:mt-44">
       <HelpingEarthText />
-      <PlantStatGrid />
+      <PlantStat />
     </section>
   );
 }
@@ -30,7 +30,7 @@ function HelpingEarthText() {
   );
 }
 
-function PlantStatGrid() {
+function PlantStat() {
   return (
     <div className="flex flex-col sm:flex-row w-full lg:w-[800px] mt-10 lg:mt-0">
       <PlantCard />
