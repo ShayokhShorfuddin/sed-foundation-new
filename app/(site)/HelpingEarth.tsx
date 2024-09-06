@@ -20,7 +20,7 @@ function HelpingEarthText() {
         Helping Humanity<span className="text-sedGreen">.</span>
       </h1>
 
-      <p className="mt-5 w-full sm:w-80 font-outfit">
+      <p className="mt-5 w-full sm:w-96 lg:w-80 font-outfit">
         Every year, our dedicated team and volunteers come together to plant
         thousands of saplings across diverse ecosystems. We carefully select
         native species that will thrive in each location, ensuring the best

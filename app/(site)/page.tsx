@@ -7,6 +7,7 @@ import FAQ from "./FAQ";
 import BottomCard from "./BottomCard";
 import Footer from "./Footer";
 import MoveUpButton from "./MoveUpButton";
+import Funding from "./Funding";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <BentoGrid />
       <HelpingEarth />
+      <Funding />
       <Choice />
       <FAQ />
       <BottomCard />
