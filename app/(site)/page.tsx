@@ -1,11 +1,12 @@
+import Navbar from "./Navbar";
+import Hero from "./Hero";
 import BentoGrid from "./BentoGrid";
-import BottomCard from "./BottomCard";
+import HelpingEarth from "./HelpingEarth";
 import Choice from "./Choice";
 import FAQ from "./FAQ";
+import BottomCard from "./BottomCard";
 import Footer from "./Footer";
-import Hero from "./Hero";
 import MoveUpButton from "./MoveUpButton";
-import Navbar from "./Navbar";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <BentoGrid />
+      <HelpingEarth />
       <Choice />
       <FAQ />
       <BottomCard />
