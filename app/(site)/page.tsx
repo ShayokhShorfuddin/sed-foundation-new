@@ -2,12 +2,13 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import BentoGrid from "./BentoGrid";
 import HelpingEarth from "./HelpingEarth";
+import Funding from "./Funding";
 import Choice from "./Choice";
 import FAQ from "./FAQ";
+import Partners from "./Partners";
 import BottomCard from "./BottomCard";
 import Footer from "./Footer";
 import MoveUpButton from "./MoveUpButton";
-import Funding from "./Funding";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Funding />
       <Choice />
       <FAQ />
+      <Partners />
       <BottomCard />
       <Footer />
       <MoveUpButton />
