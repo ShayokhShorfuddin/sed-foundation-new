@@ -68,7 +68,7 @@ function Card4() {
 function Card5() {
   return (
     <div className="flex flex-col justify-center items-center rounded-xl border border-gray-200 hover:border-sedGreen w-full h-full transition duration-200 ease-in-out">
-      <h1 className="text-4xl md:text-5xl font-outfit">36k</h1>
+      <h1 className="text-4xl md:text-5xl font-outfit">6k</h1>
       <p className="mt-2">Trees Planted</p>
     </div>
   );
