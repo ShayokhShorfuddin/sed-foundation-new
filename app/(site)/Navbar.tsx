@@ -9,7 +9,7 @@ import Linkedin from "@/public/social-media/linkedin.svg";
 import Youtube from "@/public/social-media/youtube.svg";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { ChevronDown, ChevronDownIcon, Menu } from "lucide-react";
 import { X as XIcon } from "lucide-react";
 
 import {
@@ -77,7 +77,10 @@ export default function Navbar() {
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item">
                     <AccordionTrigger className="text-left">
-                      Programs
+                      <div className="flex">
+                        <p className="mr-2">Programs</p>
+                        <ChevronDownIcon />
+                      </div>
                     </AccordionTrigger>
 
                     <AccordionContent className="text-left mt-4 ml-4">
@@ -158,8 +161,11 @@ export function Navlinks() {
 
         <NavigationMenuItem>
           <HoverCard>
-            <HoverCardTrigger className="mr-4 md:mr-7 hover:text-sedGreen transition duration-160 ease-in-out">
-              Programs
+            <HoverCardTrigger className="mr-4 md:mr-5 hover:text-sedGreen transition duration-160 ease-in-out">
+              <div className="inline-flex justify-center items-center">
+                <p className="mr-2">Programs</p>
+                <ChevronDownIcon size={15} />
+              </div>
             </HoverCardTrigger>
 
             <HoverCardContent className="w-fit">
@@ -203,7 +209,7 @@ function NavbarDialogButton() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <p className="hover:cursor-pointer">Contact Us</p>
+        <p className="hover:cursor-pointer">Contact</p>
       </AlertDialogTrigger>
 
       <AlertDialogContent>
