@@ -30,7 +30,7 @@ function FundText() {
 
       <div className="flex justify-center lg:justify-start mt-10">
         <Link
-          href="/donate"
+          href="/donation"
           className="bg-sedGreen text-white px-7 py-2 rounded-lg"
         >
           Donate
