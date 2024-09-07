@@ -69,10 +69,10 @@ export function Location() {
       <MapPin className="mr-2" />
 
       <a
-        href="https://maps.app.goo.gl/QLYg6ZbjsyRAY9beA"
+        href="https://maps.app.goo.gl/HvAgd7TzznZcXjLJ6"
         className="hover:underline text-gray-600 text-sm"
       >
-        Mugda, Dhaka - 1214, Bangladesh
+        803/A, Khilgaon Tilpapara, Road 14, Dhaka-1219
       </a>
     </div>
   );
