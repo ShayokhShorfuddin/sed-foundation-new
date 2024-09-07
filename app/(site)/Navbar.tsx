@@ -289,15 +289,15 @@ export function SocialMedias() {
       </Link>
 
       <Link href={"https://x.com/home"}>
-        <Image src={X} alt="SED Facebook" className="mr-6" />
+        <Image src={X} alt="SED Twitter" className="mr-6" />
       </Link>
 
       <Link href={"https://www.linkedin.com/"}>
-        <Image src={Linkedin} alt="SED Facebook" className="mr-6" />
+        <Image src={Linkedin} alt="SED LinkedIn" className="mr-6" />
       </Link>
 
       <Link href={"https://www.youtube.com/"}>
-        <Image src={Youtube} alt="SED Facebook" className="mr-6" />
+        <Image src={Youtube} alt="SED Youtube" className="mr-6" />
       </Link>
     </div>
   );
