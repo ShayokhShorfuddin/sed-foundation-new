@@ -9,7 +9,7 @@ import Linkedin from "@/public/social-media/linkedin.svg";
 import Youtube from "@/public/social-media/youtube.svg";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronDownIcon, Menu } from "lucide-react";
+import { ChevronDownIcon, Menu } from "lucide-react";
 import { X as XIcon } from "lucide-react";
 
 import {
@@ -128,6 +128,10 @@ export default function Navbar() {
               <li>
                 <NavbarDialogButton />
               </li>
+
+              <li>
+                <Link href={"/donation"}>Donation</Link>
+              </li>
             </div>
 
             <li>
@@ -234,6 +238,15 @@ export function Navlinks() {
         <NavigationMenuItem>
           <NavbarDialogButton />
         </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            asChild
+            className="hidden lg:block text-sedGreen hover:text-foreground transition duration-160 ease-in-out"
+          >
+            <Link href={"/donation"}>Donation</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
@@ -243,7 +256,9 @@ function NavbarDialogButton() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <p className="hover:cursor-pointer">Contact</p>
+        <p className="mr-0 lg:mr-7 hover:text-sedGreen transition duration-160 ease-in-out hover:cursor-pointer">
+          Contact
+        </p>
       </AlertDialogTrigger>
 
       <AlertDialogContent>
