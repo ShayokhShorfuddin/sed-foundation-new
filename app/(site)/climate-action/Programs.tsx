@@ -5,6 +5,7 @@ import Child from "./_images/child.jpg";
 import Sapling from "./_images/sapling2.jpg";
 import Training from "./_images/training.jpg";
 import Seminar from "./_images/seminar.jpg";
+import MootCourt from "./_images/moot-court.jpg";
 
 export default function Programs() {
   type Program = {
@@ -38,6 +39,13 @@ export default function Programs() {
     {
       image: Child,
       title: "Children Engagement",
+      description:
+        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
+    },
+
+    {
+      image: MootCourt,
+      title: "Moot Court",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
