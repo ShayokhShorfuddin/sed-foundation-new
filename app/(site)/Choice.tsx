@@ -75,7 +75,7 @@ export default function Choice() {
         />
       </div>
 
-      {/*TODO: Carousel for small screens */}
+      {/* Carousel for small screens */}
       <Carousel className="hidden xs:block md:hidden sm w-full max-w-xs mt-10">
         <CarouselContent>
           <CarouselItem>
