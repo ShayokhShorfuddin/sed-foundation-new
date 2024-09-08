@@ -52,10 +52,17 @@ export default function Programs() {
   ];
 
   return (
-    <section className="container mt-20 mb-10">
-      <div
-        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 h-fit w-full gap-7 px-0 2xl:px-32`}
-      >
+    <section className="container flex flex-col items-center mt-20 mb-10 px-5 2xl:px-32">
+      <h1 className="text-4xl font-outfit">
+        Our Programs<span className="text-sedGreen">.</span>
+      </h1>
+
+      <p className="mt-4 sm:mt-6 max-w-[31rem] text-sm md:text-base text-center">
+        We offer a variety of programs designed to engage and educate everyone.
+        There's something for everyone to get involved in and make a difference.
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 h-fit w-full gap-7 mt-10">
         {programs.map((program, index) => (
           <ProgramCard
             key={index}
