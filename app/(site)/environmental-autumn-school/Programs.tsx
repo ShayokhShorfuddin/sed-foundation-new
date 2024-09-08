@@ -1,10 +1,9 @@
 import Image, { StaticImageData } from "next/image";
 
-import Child from "./_images/child.jpg";
-import Sapling from "./_images/sapling2.jpg";
-import Training from "./_images/training.jpg";
-import Seminar from "./_images/seminar.jpg";
-import MootCourt from "./_images/moot-court.jpg";
+import Advantage from "./_images/advantage.jpg";
+import Application from "./_images/application.jpg";
+import Students from "./_images/students.jpg";
+import School2 from "./_images/school2.jpg";
 
 export default function Programs() {
   type Program = {
@@ -15,36 +14,29 @@ export default function Programs() {
 
   const programs: Program[] = [
     {
-      image: Sapling,
-      title: "Tree Plantation",
+      image: Students,
+      title: "What is Autumn School?",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Seminar,
-      title: "Workshops & Seminars",
+      image: Advantage,
+      title: "Advantage & Scope",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Training,
-      title: "Training Program",
+      image: Application,
+      title: "Call for Application",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Child,
-      title: "Children Engagement",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: MootCourt,
-      title: "Moot Court",
+      image: School2,
+      title: "Previous Schools",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
