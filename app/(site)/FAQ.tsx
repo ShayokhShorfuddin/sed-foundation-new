@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function FAQ() {
   return (
-    <section className="flex justify-center mt-40 mx-10">
+    <section className="flex justify-center mt-28 lg:mt-44 mx-10">
       <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-[1200px]">
         <div className="flex flex-col items-left text-left">
           <h1 className="text-4xl font-outfit">

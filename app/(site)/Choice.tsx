@@ -17,7 +17,7 @@ import {
 
 export default function Choice() {
   return (
-    <section className="flex flex-col items-center mt-36">
+    <section className="flex flex-col items-center mt-28 lg:mt-44">
       <div className="flex flex-col items-center relative text-center">
         <h1 className="text-3xl md:text-4xl font-outfit leading-tight text-center">
           Let's Make Our <span className="text-sedGreen">Planet</span>

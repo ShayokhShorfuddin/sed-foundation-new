@@ -5,7 +5,7 @@ import Nuclear from "@/public/partners/nuclear.svg";
 
 export default function Partners() {
   return (
-    <section className="flex justify-center mt-24 max-w-[1200px] lg:mx-auto px-8 xl:px-0">
+    <section className="flex justify-center mt-20 lg:mt-36 max-w-[1200px] lg:mx-auto px-8 xl:px-0">
       <div className="flex flex-col lg:flex-row justify-between items-center w-full text-center lg:text-start">
         <div className="flex flex-col mb-8 lg:mb-0 lg:mr-10 max-w-[530px]">
           <h1 className="text-4xl font-outfit mb-4">
