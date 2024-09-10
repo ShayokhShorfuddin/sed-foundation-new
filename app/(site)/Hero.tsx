@@ -16,7 +16,7 @@ export default function Hero() {
           <span className="text-sedGreen">.</span>
         </h1>
 
-        <p className="w-full sm:w-[500px] md:w-[550px] lg:w-[600px] mt-7 font-outfit text-gray-600">
+        <p className="w-full sm:w-[500px] md:w-[550px] lg:w-[600px] mt-7 font-sans text-gray-600">
           We're confronting climate change through cutting-edge approaches and
           united efforts. By working together, we can forge a world where
           humanity and nature coexist in perfect balance.

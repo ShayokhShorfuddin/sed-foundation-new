@@ -22,7 +22,7 @@ export default function BottomCard() {
         </h1>
 
         <div className="flex flex-col items-center max-w-80 mt-5 md:mt-0">
-          <p className="text-sm">
+          <p className="text-sm font-sans">
             Get in touch with us to find out how you can join SED Foundation and
             be a part of a greater good.
           </p>

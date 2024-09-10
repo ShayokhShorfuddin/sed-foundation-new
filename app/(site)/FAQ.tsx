@@ -16,7 +16,7 @@ export default function FAQ() {
             Frequently <span className="text-sedGreen">Asked</span> Questions
             <span className="text-sedGreen">.</span>
           </h1>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 mt-2 font-sans">
             These are the most commonly asked questions about us.
           </p>
 

@@ -11,7 +11,7 @@ export default function Partners() {
           <h1 className="text-4xl font-outfit mb-4">
             Our Partners<span className="text-sedGreen">.</span>
           </h1>
-          <p className="text-md text-gray-700">
+          <p className="text-md text-gray-700 font-sans">
             We are proud to collaborate with a diverse group of partners who
             share our commitment to sustainability and environmental
             stewardship. Together, we work on groundbreaking projects that drive

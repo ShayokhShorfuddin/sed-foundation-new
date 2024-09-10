@@ -11,13 +11,13 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start max-w-96 md:mr-10">
           <Image src={LogoTransparent} alt="Logo" className="w-28 md:w-32" />
 
-          <p className="text-gray-600 mt-1 text-sm sm:text-base">
+          <p className="text-gray-600 mt-1 text-sm sm:text-base font-sans">
             SED is a dedicated international environmental organization
             committed to prevent climate change and promote sustainable
             development.
           </p>
 
-          <p className="text-gray-600 text-xs mt-6">
+          <p className="text-gray-600 text-xs mt-6 font-sans">
             Copyright © 2012-2024 SED. All rights reserved.
           </p>
         </div>

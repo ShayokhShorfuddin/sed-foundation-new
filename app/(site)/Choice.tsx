@@ -25,7 +25,7 @@ export default function Choice() {
           Cleaner & Greener<span className="text-sedGreen">.</span>
         </h1>
 
-        <p className="font-outfit mt-3 mx-10">
+        <p className="font-sans mt-3 mx-10">
           Choose how you would want to contribute to this noble cause.
         </p>
 

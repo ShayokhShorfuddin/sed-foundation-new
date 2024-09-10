@@ -21,7 +21,7 @@ function FundText() {
         Fresher Air<span className="text-sedGreen">.</span>
       </h1>
 
-      <p className="mt-5 w-full sm:w-96 lg:w-80 font-outfit">
+      <p className="mt-5 w-full sm:w-96 lg:w-80 font-sans">
         Our fundraising drives enable us to support cutting-edge research into
         renewable energy technologies and sustainable practices. We channel
         donations into grants for scientists and engineers working on

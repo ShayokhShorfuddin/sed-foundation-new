@@ -81,7 +81,7 @@ export default function BentoGrid() {
       <p className="text-sedGreen font-outfit text-4xl md:text-5xl">
         Worldwide
       </p>
-      <p className="mt-0 sm:mt-5 font-outfit w-full sm:w-96 p-5 sm:p-0 text-center">
+      <p className="mt-0 sm:mt-5 font-sans w-full sm:w-96 p-5 sm:p-0 text-center">
         We work with partners and communities to ensure nature thrives and
         climate change is reversed.
       </p>
