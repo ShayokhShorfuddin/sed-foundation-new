@@ -18,7 +18,7 @@ export default function Footer() {
           </p>
 
           <p className="text-gray-600 text-xs mt-6 font-sans">
-            Copyright © 2012-2024 SED. All rights reserved.
+            Copyright © 2017-2024 SED. All rights reserved.
           </p>
         </div>
 
