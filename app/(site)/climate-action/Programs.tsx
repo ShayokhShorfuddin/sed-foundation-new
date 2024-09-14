@@ -100,7 +100,7 @@ function ProgramCard({
         <Image src={image} alt="forest" className="rounded-xl" />
 
         <h1 className="mt-7 text-xl">{title}</h1>
-        <p className="mt-2">{description}</p>
+        <p className="font-sans mt-2">{description}</p>
       </div>
     </Link>
   );
