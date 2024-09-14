@@ -85,17 +85,17 @@ export default function Navbar() {
                       </div>
                     </AccordionTrigger>
 
-                    <AccordionContent className="text-left mt-4 ml-4">
+                    <AccordionContent className="text-left mt-3 ml-4">
                       <Link href={"/climate-action"}>Climate Action</Link>
                     </AccordionContent>
 
-                    <AccordionContent className="text-left mt-4 ml-4">
+                    <AccordionContent className="text-left mt-3 ml-4">
                       <Link href={"/research-publication"}>
                         Research & Publications
                       </Link>
                     </AccordionContent>
 
-                    <AccordionContent className="text-left mt-4 ml-4">
+                    <AccordionContent className="text-left mt-3 ml-4">
                       <Link href={"/environmental-autumn-school"}>
                         Environmental Autumn School
                       </Link>
@@ -114,11 +114,11 @@ export default function Navbar() {
                       </div>
                     </AccordionTrigger>
 
-                    <AccordionContent className="text-left mt-4 ml-4">
+                    <AccordionContent className="text-left mt-3 ml-4">
                       <Link href={"/news"}>News</Link>
                     </AccordionContent>
 
-                    <AccordionContent className="text-left mt-4 ml-4">
+                    <AccordionContent className="text-left mt-3 ml-4">
                       <Link href={"/events"}>Events</Link>
                     </AccordionContent>
                   </AccordionItem>
