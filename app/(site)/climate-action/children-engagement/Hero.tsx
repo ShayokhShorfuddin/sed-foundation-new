@@ -3,7 +3,7 @@ import Teaching from "./_images/teaching.svg";
 
 export default function Hero() {
   return (
-    <section className="container mt-4 md:mt-5">
+    <section className="container mt-7 md:mt-5">
       <div className="flex flex-col md:flex-row justify-around items-center font-outfit">
         <div className="flex flex-col max-w-[30rem] pr-5 sm:text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl">
