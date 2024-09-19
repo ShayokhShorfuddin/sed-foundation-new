@@ -50,12 +50,7 @@ export default function Navbar() {
   return (
     <nav className="container flex justify-between items-center mt-3">
       {/* For wide screen */}
-      <Image
-        src={Logo}
-        alt="SED Logo"
-        className="w-20 sm:w-24"
-        placeholder="blur"
-      />
+      <Image src={Logo} alt="SED Logo" className="w-20 sm:w-24" />
       <Navlinks />
       <SocialMedias />
 
