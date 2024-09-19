@@ -18,7 +18,7 @@ export default function Footer() {
 
           <p className="text-gray-600 mt-1 text-sm sm:text-base font-sans">
             SED is a dedicated international environmental organization
-            committed to prevent climate change and promote sustainable
+            committed to preventing climate change and promote sustainable
             development.
           </p>
 
