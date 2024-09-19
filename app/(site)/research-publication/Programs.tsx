@@ -18,7 +18,7 @@ export default function Programs() {
   const programs: Program[] = [
     {
       image: Research,
-      href: "/",
+      href: "/research-publication/research-programs",
       title: "Research Programs",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
