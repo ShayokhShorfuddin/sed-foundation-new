@@ -21,7 +21,7 @@ export default function Programs() {
       href: "/climate-action/tree-plantation",
       title: "Tree Plantation",
       description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
+        "Our organization is committed to advancing tree plantation efforts. We recognize that tree planting serves as a pivotal strategy in addressing climate change, rehabilitating natural ecosystems, and enhancing the well-being of communities globally. Through our initiatives focused on tree plantation, we aspire to foster a more sustainable and healthier environment for future generations.",
     },
 
     {
@@ -29,7 +29,7 @@ export default function Programs() {
       href: "/climate-action/workshop-and-seminars",
       title: "Workshops & Seminars",
       description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
+        "We carefully curate a diverse range of topics, bringing together experts, activists, and community leaders to share insights and inspire action. From hands-on workshops that teach practical skills to thought-provoking seminars that explore the latest in climate science and policy, our programs are designed to educate, motivate, and mobilize individuals and communities towards sustainable practices and informed decision-making.",
     },
 
     {
@@ -37,7 +37,7 @@ export default function Programs() {
       href: "/climate-action/training",
       title: "Training Program",
       description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
+        "Our exclusive training programs are designed to equip individuals with vital environmental skills and knowledge. This offers participants comprehensive understanding and practical skills to foster positive change in their communities and support global environmental initiatives.",
     },
 
     {
@@ -45,7 +45,7 @@ export default function Programs() {
       href: "/climate-action/children-engagement",
       title: "Children Engagement",
       description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
+        "We place a strong emphasis on child engagement as a cornerstone of its environmental initiatives. By involving children in tree plantation activities, the foundation aims to instill a sense of responsibility and connection to nature from a young age. This approach not only educates the younger generation about the importance of environmental conservation but also empowers them to take active roles in creating a sustainable future.",
     },
 
     {
@@ -53,7 +53,7 @@ export default function Programs() {
       href: "/climate-action/moot-court",
       title: "Moot Court",
       description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
+        "Our organization hosts moot court events under the Environmental Education program of the SED Foundation. These events aim to create more activists from the legal arena who can fight for the environment before various courts and protect our natural surroundings. Participants engage in simulated court proceedings, gaining valuable experience and knowledge to advocate for environmental justice.",
     },
   ];
 
@@ -105,7 +105,7 @@ function ProgramCard({
         />
 
         <h1 className="mt-7 text-xl">{title}</h1>
-        <p className="font-sans mt-2">{description}</p>
+        <p className="font-sans mt-2 line-clamp-5">{description}</p>
       </div>
     </Link>
   );
