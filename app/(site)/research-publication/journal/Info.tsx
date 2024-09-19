@@ -26,7 +26,6 @@ export default function Info() {
   );
 }
 
-// Common configuration for tabs and combo options
 const tabOptions = [
   {
     key: "editorial-board",
@@ -61,24 +60,22 @@ const comboOptions = [
   },
 ];
 
-// Placeholder components for future development
 function EditorialBoard() {
-  return <p>Editors go here</p>; // Placeholder content
+  return <p>Editors go here</p>;
 }
 
 function SubmissionGuideline() {
-  return <p>Submission stuffs go here</p>; // Placeholder content
+  return <p>Submission stuffs go here</p>;
 }
 
 function Archive() {
-  return <p>Archive goes here</p>; // Placeholder content
+  return <p>Archive goes here</p>;
 }
 
 function CallForPaper() {
-  return <p>Calling for papers lol</p>; // Placeholder content
+  return <p>Calling for papers lol</p>;
 }
 
-// Refactored TabSection to use common configuration
 function TabSection() {
   return (
     <section className="hidden sm:flex flex-col justify-center items-center mt-10">
@@ -93,7 +90,6 @@ function TabSection() {
   );
 }
 
-// Refactored ComboSection to use common configuration
 function ComboSection() {
   const [selectedValue, setSelectedValue] = useState("");
 
