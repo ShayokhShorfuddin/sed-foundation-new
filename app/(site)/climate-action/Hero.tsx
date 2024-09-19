@@ -10,6 +10,7 @@ export default function Hero() {
           src={ClimateActionHeaderImage}
           alt="Climate Action Header Image"
           fill
+          placeholder="blur"
           className="object-cover"
         />
 

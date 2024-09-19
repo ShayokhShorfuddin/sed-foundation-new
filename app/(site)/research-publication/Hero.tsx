@@ -10,6 +10,7 @@ export default function Hero() {
           src={ResearchAndPublicationHeaderImage}
           alt="Research and publication header image"
           fill
+          placeholder="blur"
           className="object-cover"
         />
 

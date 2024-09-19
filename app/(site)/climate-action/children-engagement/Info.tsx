@@ -20,6 +20,7 @@ function Section1() {
         <Image
           src={Child1}
           alt="Child 1"
+          placeholder="blur"
           className="max-w-full sm:max-w-[35rem] lg:mr-10 mt-10 lg:mt-0"
         />
 
@@ -66,6 +67,7 @@ function Section2() {
         <Image
           src={Child2}
           alt="Child 2"
+          placeholder="blur"
           className="max-w-full sm:max-w-[35rem] lg:ml-10 mt-10 lg:mt-0"
         />
       </div>
@@ -80,6 +82,7 @@ function Section3() {
         <Image
           src={Child3}
           alt="Child 3"
+          placeholder="blur"
           className="max-w-full sm:max-w-[35rem] lg:mr-10 mt-10 lg:mt-0"
         />
 

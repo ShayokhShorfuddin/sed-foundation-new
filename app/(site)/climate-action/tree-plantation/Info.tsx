@@ -20,6 +20,7 @@ function Section1() {
         <Image
           src={Dhaka2}
           alt="Dhaka2"
+          placeholder="blur"
           className="max-w-full sm:max-w-[35rem] lg:mr-10 mt-10 lg:mt-0"
         />
 
@@ -64,6 +65,7 @@ function Section2() {
         <Image
           src={Dhaka1}
           alt="Dhaka1"
+          placeholder="blur"
           className="max-w-full sm:max-w-[35rem] lg:ml-10 mt-10 lg:mt-0"
         />
       </div>
@@ -78,6 +80,7 @@ function Section3() {
         <Image
           src={Dhaka3}
           alt="Dhaka3"
+          placeholder="blur"
           className="max-w-full sm:max-w-[35rem] lg:mr-10 mt-10 lg:mt-0"
         />
 

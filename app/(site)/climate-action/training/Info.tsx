@@ -18,6 +18,7 @@ function Section1() {
         <Image
           src={Training1}
           alt="Training 1"
+          placeholder="blur"
           className="max-w-full sm:max-w-[35rem] lg:mr-10 mt-10 lg:mt-0"
         />
 
@@ -62,6 +63,7 @@ function Section2() {
         <Image
           src={Training2}
           alt="Training 2"
+          placeholder="blur"
           className="max-w-full sm:max-w-[35rem] lg:ml-10 mt-10 lg:mt-0"
         />
       </div>

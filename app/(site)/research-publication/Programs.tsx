@@ -86,7 +86,12 @@ function ProgramCard({
 }) {
   return (
     <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out">
-      <Image src={image} alt="forest" className="rounded-xl" />
+      <Image
+        src={image}
+        alt="forest"
+        className="rounded-xl"
+        placeholder="blur"
+      />
 
       <h1 className="mt-7 text-xl">{title}</h1>
       <p className="font-sans mt-2">{description}</p>

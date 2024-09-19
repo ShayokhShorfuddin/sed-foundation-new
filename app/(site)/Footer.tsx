@@ -9,7 +9,12 @@ export default function Footer() {
     <footer className="bg-gradient-to-b from-background to-green-100 mt-40 pb-20">
       <div className="container flex flex-col md:flex-row relative text-center md:text-left items-center md:items-start w-full">
         <div className="flex flex-col items-center md:items-start max-w-96 md:mr-10">
-          <Image src={LogoTransparent} alt="Logo" className="w-28 md:w-32" />
+          <Image
+            src={LogoTransparent}
+            alt="Logo"
+            className="w-28 md:w-32"
+            placeholder="blur"
+          />
 
           <p className="text-gray-600 mt-1 text-sm sm:text-base font-sans">
             SED is a dedicated international environmental organization

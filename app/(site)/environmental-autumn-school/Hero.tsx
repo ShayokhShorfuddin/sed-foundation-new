@@ -10,6 +10,7 @@ export default function Hero() {
           src={EnvironmentAutumnSchoolHeaderImage}
           alt="Environment Autumn School Header Image"
           fill
+          placeholder="blur"
           className="object-cover"
         />
 

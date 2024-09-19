@@ -32,23 +32,27 @@ export default function Choice() {
         <Image
           src={ForestRound1}
           alt="Forest Round 1"
+          placeholder="blur"
           className="absolute hidden lg:block -left-24 -top-14 size-14 rounded-full ring-2 ring-sedGreen ring-offset-4 hover:ring-offset-8 transform duration-300 ease-in-out"
         />
         <Image
           src={ForestRound2}
           alt="Forest Round 2"
+          placeholder="blur"
           className="absolute hidden lg:block -left-44 top-10 size-14 rounded-full ring-2 ring-sedGreen ring-offset-4 hover:ring-offset-8 transform duration-300 ease-in-out"
         />
 
         <Image
           src={ForestRound3}
           alt="Forest Round 3"
+          placeholder="blur"
           className="absolute hidden lg:block -right-24 -top-14 size-14 rounded-full ring-2 ring-sedGreen ring-offset-4 hover:ring-offset-8 transform duration-300 ease-in-out"
         />
 
         <Image
           src={ForestRound4}
           alt="Forest Round 4"
+          placeholder="blur"
           className="absolute hidden lg:block -right-44 top-10 size-14 rounded-full ring-2 ring-sedGreen ring-offset-4 hover:ring-offset-8 transform duration-300 ease-in-out"
         />
       </div>
@@ -125,6 +129,7 @@ function ChoiceCard({
         priority
         src={image}
         alt="Volunteer"
+        placeholder="blur"
         className="h-full w-full object-cover"
       />
 

@@ -20,6 +20,7 @@ function Card2() {
         src={MountainWide}
         alt="Mountain Wide"
         fill
+        placeholder="blur"
         className="object-cover"
       />
     </div>
@@ -33,6 +34,7 @@ function Card3() {
         priority
         src={Turbine}
         alt="Turbine"
+        placeholder="blur"
         className="h-full w-full object-cover"
       />
 
@@ -54,6 +56,7 @@ function Card4() {
         src={ForestWide}
         alt="Forest Wide"
         fill
+        placeholder="blur"
         className="object-cover"
       />
 
@@ -129,6 +132,7 @@ function Card4Mobile() {
         src={ForestWide}
         alt="Forest Wide"
         fill
+        placeholder="blur"
         className="object-cover"
       />
 

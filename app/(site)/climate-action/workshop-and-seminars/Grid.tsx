@@ -24,15 +24,33 @@ export default function Grid() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20 w-full max-w-[90rem] h-[59rem] md:h-[40rem] lg:h-[59rem]">
         <div className="relative col-span-1">
-          <Image src={Javed} alt="Javed" className="object-cover" fill />
+          <Image
+            src={Javed}
+            alt="Javed"
+            className="object-cover"
+            fill
+            placeholder="blur"
+          />
         </div>
 
         <div className="relative col-span-1 md:col-span-2">
-          <Image src={Seminar1} alt="Seminar1" className="object-cover" fill />
+          <Image
+            src={Seminar1}
+            alt="Seminar1"
+            className="object-cover"
+            fill
+            placeholder="blur"
+          />
         </div>
 
         <div className="relative col-span-1 md:col-span-3">
-          <Image src={Seminar2} alt="Seminar2" className="object-cover" fill />
+          <Image
+            src={Seminar2}
+            alt="Seminar2"
+            className="object-cover"
+            fill
+            placeholder="blur"
+          />
         </div>
       </div>
     </section>

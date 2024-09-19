@@ -56,6 +56,7 @@ function FundCard() {
         priority
         src={TreeGlassArt}
         alt="Sapling"
+        placeholder="blur"
         className="h-full w-full object-cover"
       />
 

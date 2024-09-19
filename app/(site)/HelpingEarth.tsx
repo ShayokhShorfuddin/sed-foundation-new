@@ -46,6 +46,7 @@ function PlantCard() {
         priority
         src={Sapling}
         alt="Sapling"
+        placeholder="blur"
         className="h-full w-full object-cover"
       />
 
