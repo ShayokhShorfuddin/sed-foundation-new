@@ -5,10 +5,12 @@ import Research2 from "./_images/research2.jpg";
 import Journal from "./_images/journal.jpg";
 import Books from "./_images/books.jpg";
 import Newsletter from "./_images/newsletter.jpg";
+import Link from "next/link";
 
 export default function Programs() {
   type Program = {
     image: StaticImageData;
+    href: string;
     title: string;
     description: string;
   };
@@ -16,6 +18,7 @@ export default function Programs() {
   const programs: Program[] = [
     {
       image: Research,
+      href: "/",
       title: "Research Programs",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
@@ -23,6 +26,7 @@ export default function Programs() {
 
     {
       image: Research2,
+      href: "/",
       title: "Research Articles",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
@@ -30,6 +34,7 @@ export default function Programs() {
 
     {
       image: Journal,
+      href: "/research-publication/journal",
       title: "SED Journal Of Environment Studies",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
@@ -37,6 +42,7 @@ export default function Programs() {
 
     {
       image: Books,
+      href: "/",
       title: "Books",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
@@ -44,6 +50,7 @@ export default function Programs() {
 
     {
       image: Newsletter,
+      href: "/",
       title: "Newsletter",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
@@ -66,6 +73,7 @@ export default function Programs() {
           <ProgramCard
             key={index}
             image={program.image}
+            href={program.href}
             title={program.title}
             description={program.description}
           />
@@ -77,24 +85,28 @@ export default function Programs() {
 
 function ProgramCard({
   image,
+  href,
   title,
   description,
 }: {
   image: StaticImageData;
+  href: string;
   title: string;
   description: string;
 }) {
   return (
-    <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out">
-      <Image
-        src={image}
-        alt="forest"
-        className="rounded-xl"
-        placeholder="blur"
-      />
+    <Link href={href}>
+      <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out">
+        <Image
+          src={image}
+          alt="forest"
+          className="rounded-xl"
+          placeholder="blur"
+        />
 
-      <h1 className="mt-7 text-xl">{title}</h1>
-      <p className="font-sans mt-2">{description}</p>
-    </div>
+        <h1 className="mt-7 text-xl">{title}</h1>
+        <p className="font-sans mt-2">{description}</p>
+      </div>
+    </Link>
   );
 }
