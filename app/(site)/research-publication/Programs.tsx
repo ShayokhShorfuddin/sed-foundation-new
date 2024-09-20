@@ -105,7 +105,7 @@ function ProgramCard({
         />
 
         <h1 className="mt-7 text-xl">{title}</h1>
-        <p className="font-sans mt-2">{description}</p>
+        <p className="font-sans mt-2 line-clamp-5">{description}</p>
       </div>
     </Link>
   );

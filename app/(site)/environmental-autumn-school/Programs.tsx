@@ -25,7 +25,7 @@ export default function Programs() {
 
     {
       image: Advantage,
-      href: "/",
+      href: "/environmental-autumn-school/advantage-scope",
       title: "Advantage & Scope",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
@@ -96,7 +96,7 @@ function ProgramCard({
         />
 
         <h1 className="mt-7 text-xl">{title}</h1>
-        <p className="font-sans mt-2">{description}</p>
+        <p className="font-sans mt-2 line-clamp-5">{description}</p>
       </div>
     </Link>
   );
