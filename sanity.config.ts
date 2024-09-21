@@ -1,8 +1,9 @@
 import { defineConfig } from "sanity";
+import schemas from "./sanity/schemas";
 import { structureTool } from "sanity/structure";
 
 export default defineConfig({
-  title: "sed-foundation-sanity-cms",
+  title: "SED Foundation | Sanity",
 
   projectId: "q99ib49k",
   dataset: "production",
@@ -11,4 +12,5 @@ export default defineConfig({
   basePath: "/admin", // The route for the Sanity Studio
 
   plugins: [structureTool()],
+  schema: { types: schemas },
 });
