@@ -1,6 +1,6 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import Newspaper from "./_images/news.jpg";
+import Events from "./_images/events.jpg";
 import Link from "next/link";
 import {
   Pagination,
@@ -14,140 +14,139 @@ import { useRouter } from "next/navigation";
 
 const ITEMS_PER_PAGE = 6;
 
-type NewsType = {
+type EventsType = {
   image: StaticImageData;
   href: string;
   title: string;
   description: string;
 };
 
-export default function NewsSection() {
+export default function EventSection() {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
-
-  const newsData: NewsType[] = [
+  const eventsData: EventsType[] = [
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News1",
+      title: "Event1",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News2",
+      title: "Event2",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News3",
+      title: "Event3",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News4",
+      title: "Event4",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News5",
+      title: "Event5",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News6",
+      title: "Event6",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News7",
+      title: "Event7",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News8",
+      title: "Event8",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News9",
+      title: "Event9",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News10",
+      title: "Event10",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News11",
+      title: "Event11",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News12",
+      title: "Event12",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
 
     {
-      image: Newspaper,
+      image: Events,
       href: "/",
-      title: "News13",
+      title: "Event13",
       description:
         "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
     },
   ];
 
-  const totalPages = Math.ceil(newsData.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(eventsData.length / ITEMS_PER_PAGE);
 
   const handleNextPage = () => {
     const nextPage = Math.min(currentPage + 1, totalPages);
     setCurrentPage(nextPage);
-    router.push(`/news`);
+    router.push(`/events`);
   };
 
   const handlePrevPage = () => {
     const prevPage = Math.max(currentPage - 1, 1);
     setCurrentPage(prevPage);
-    router.push(`/news`);
+    router.push(`/events`);
   };
 
   return (
     <section className="mt-20 mb-10">
-      <NewsGrid currentPage={currentPage} newsData={newsData} />
+      <EventsGrid currentPage={currentPage} eventsData={eventsData} />
       <PaginationSection
         currentPage={currentPage}
         totalPages={totalPages}
@@ -158,17 +157,17 @@ export default function NewsSection() {
   );
 }
 
-function NewsGrid({
+function EventsGrid({
   currentPage,
-  newsData,
+  eventsData,
 }: {
   currentPage: number;
-  newsData: NewsType[];
+  eventsData: EventsType[];
 }) {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const displayedNews = newsData.slice(startIndex, endIndex);
-  const displayedCount = displayedNews.length; // Get the number of items
+  const displayedEvents = eventsData.slice(startIndex, endIndex);
+  const displayedCount = displayedEvents.length; // Get the number of items
 
   const gridRows = displayedCount <= 3 ? 1 : 2;
 
@@ -179,19 +178,19 @@ function NewsGrid({
       </h1>
 
       <p className="mt-4 max-w-[31rem] text-sm md:text-base text-center">
-        Stay up to date with the latest news and info.
+        Learn about the upcoming or past events!
       </p>
 
       <div
         className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-${gridRows} h-fit w-full gap-7 mt-10`}
       >
-        {displayedNews.map((news, index) => (
+        {displayedEvents.map((event, index) => (
           <NewsCard
             key={index}
-            image={news.image}
-            href={news.href}
-            title={news.title}
-            description={news.description}
+            image={event.image}
+            href={event.href}
+            title={event.title}
+            description={event.description}
           />
         ))}
       </div>
