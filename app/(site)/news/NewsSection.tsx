@@ -1,7 +1,10 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
-import Newspaper from "./_images/news.jpg";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { PortableTextBlock } from "sanity";
+import { PortableText } from "@portabletext/react";
+
 import {
   Pagination,
   PaginationContent,
@@ -9,127 +12,41 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+
+import getProjects from "@/sanity/sanity-utils";
 
 const ITEMS_PER_PAGE = 6;
 
 type NewsType = {
-  image: StaticImageData;
-  href: string;
+  _id: string;
+  _createdAt: Date;
+
   title: string;
-  description: string;
+  slug: string;
+  content: PortableTextBlock[];
+
+  cardImage: {
+    asset: {
+      url: string;
+    };
+    alt: string;
+  };
+
+  date: Date;
 };
 
 export default function NewsSection() {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
+  const [newsData, setNewsData] = useState<NewsType[]>([]);
 
-  const newsData: NewsType[] = [
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News1",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News2",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News3",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News4",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News5",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News6",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News7",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News8",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News9",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News10",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News11",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News12",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Newspaper,
-      href: "/",
-      title: "News13",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-  ];
+  useEffect(() => {
+    const fetchNews = async () => {
+      const data = await getProjects();
+      setNewsData(data);
+    };
+    fetchNews();
+  }, []);
 
   const totalPages = Math.ceil(newsData.length / ITEMS_PER_PAGE);
 
@@ -188,10 +105,11 @@ function NewsGrid({
         {displayedNews.map((news, index) => (
           <NewsCard
             key={index}
-            image={news.image}
-            href={news.href}
+            image={news.cardImage.asset.url}
+            alt={news.cardImage.alt}
+            href={news.slug}
             title={news.title}
-            description={news.description}
+            content={news.content}
           />
         ))}
       </div>
@@ -201,27 +119,26 @@ function NewsGrid({
 
 function NewsCard({
   image,
+  alt,
   href,
   title,
-  description,
+  content,
 }: {
-  image: StaticImageData;
+  image: string;
+  alt: string;
   href: string;
   title: string;
-  description: string;
+  content: PortableTextBlock[];
 }) {
   return (
-    <Link href={href}>
+    <Link href={`/news/${href}`}>
       <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out">
-        <Image
-          src={image}
-          alt="forest"
-          className="rounded-xl"
-          placeholder="blur"
-        />
+        <img src={image} alt={alt} className="rounded-xl" />
 
-        <h1 className="mt-7 text-xl">{title}</h1>
-        <p className="font-sans mt-2 line-clamp-5">{description}</p>
+        <h1 className="mt-5 text-xl">{title}</h1>
+        <div className="font-sans mt-6 line-clamp-5">
+          <PortableText value={content} />
+        </div>
       </div>
     </Link>
   );
