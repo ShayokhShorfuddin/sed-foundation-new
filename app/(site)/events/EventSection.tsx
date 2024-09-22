@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/pagination";
 
 import { getEvents } from "@/sanity/sanity-utils";
+import { Clock } from "lucide-react";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -107,7 +108,7 @@ function EventsGrid({
         className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-${gridRows} h-fit w-full gap-7 mt-10`}
       >
         {displayedEvents.map((event, index) => (
-          <NewsCard
+          <EventsCard
             key={index}
             image={event.cardImage.asset.url}
             alt={event.cardImage.alt}
@@ -116,6 +117,7 @@ function EventsGrid({
             href={event.slug}
             title={event.title}
             content={event.content}
+            date={event.date}
           />
         ))}
       </div>
@@ -123,7 +125,7 @@ function EventsGrid({
   );
 }
 
-function NewsCard({
+function EventsCard({
   image,
   alt,
   venue,
@@ -131,6 +133,7 @@ function NewsCard({
   href,
   title,
   content,
+  date,
 }: {
   image: string;
   alt: string;
@@ -139,19 +142,32 @@ function NewsCard({
   href: string;
   title: string;
   content: PortableTextBlock[];
+  date: Date;
 }) {
+  const isUpcoming = new Date(date) > new Date(); // Check if the event date is in the future
+
   return (
     <Link href={`/events/${href}`}>
       <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out">
         <img src={image} alt={alt} className="rounded-xl" />
-
         <h1 className="mt-5 text-xl">{title}</h1>
+
+        {isUpcoming && <UpcomingTag />}
 
         <div className="font-sans mt-6 line-clamp-5">
           <PortableText value={content} />
         </div>
       </div>
     </Link>
+  );
+}
+
+function UpcomingTag() {
+  return (
+    <div className="flex mt-1 text-sedGreen">
+      <Clock className="mr-2" />
+      <p>Upcoming</p>
+    </div>
   );
 }
 
