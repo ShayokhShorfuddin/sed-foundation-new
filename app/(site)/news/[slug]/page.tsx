@@ -36,7 +36,7 @@ function NewsContent({ news }: { news: NewsType }) {
         className="rounded-xl"
       />
 
-      <h1 className="text-3xl mt-8">{news.title}</h1>
+      <h1 className="text-lg md:text-xl lg:text-2xl mt-8">{news.title}</h1>
 
       <span className="px-3 py-1 border border-sedGreen w-min rounded-full text-sm mt-5">
         {new Intl.DateTimeFormat("en-GB").format(new Date(news.date))}

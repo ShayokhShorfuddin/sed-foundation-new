@@ -38,7 +38,7 @@ function EventContent({ event }: { event: EventsType }) {
         className="rounded-xl"
       />
 
-      <h1 className="text-3xl mt-8">{event.title}</h1>
+      <h1 className="text-lg md:text-xl lg:text-2xl mt-8">{event.title}</h1>
 
       <div className="flex items-center mt-5">
         <span className="px-3 py-1 border border-sedGreen w-min rounded-full text-sm mr-3">
