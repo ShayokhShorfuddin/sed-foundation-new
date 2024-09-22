@@ -13,11 +13,11 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-import getProjects from "@/sanity/sanity-utils";
+import { getProjects } from "@/sanity/sanity-utils";
 
 const ITEMS_PER_PAGE = 6;
 
-type NewsType = {
+export type NewsType = {
   _id: string;
   _createdAt: Date;
 
