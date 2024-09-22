@@ -46,7 +46,7 @@ export default function NewsSection() {
       setNewsData(data);
     };
     fetchNews();
-  });
+  }, []);
 
   const totalPages = Math.ceil(newsData.length / ITEMS_PER_PAGE);
 
@@ -132,7 +132,7 @@ function NewsCard({
 }) {
   return (
     <Link href={`/news/${href}`}>
-      <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out">
+      <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out h-full">
         <img src={image} alt={alt} className="rounded-xl" />
 
         <h1 className="mt-5 text-xl">{title}</h1>
