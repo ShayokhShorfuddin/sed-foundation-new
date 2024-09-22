@@ -21,7 +21,7 @@ export async function getNews(): Promise<NewsType[]> {
     date
   }`,
     {},
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 120 } }
   );
 }
 
@@ -44,7 +44,7 @@ export async function getNewsBySlug(slug: string): Promise<NewsType> {
     date
   }`,
     { slug },
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 120 } }
   );
 }
 
@@ -69,7 +69,7 @@ export async function getEvents(): Promise<EventsType[]> {
     date
   }`,
     {},
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 120 } }
   );
 }
 
@@ -94,6 +94,6 @@ export async function getEventBySlug(slug: string): Promise<EventsType> {
     date
   }`,
     { slug },
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 120 } }
   );
 }
