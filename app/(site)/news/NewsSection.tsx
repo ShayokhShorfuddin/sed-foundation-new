@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { PortableTextBlock } from "sanity";
-import { PortableText } from "@portabletext/react";
+import { PortableText } from "next-sanity";
 
 import {
   Pagination,
