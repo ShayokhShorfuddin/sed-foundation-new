@@ -63,10 +63,17 @@ const eventsSchema = {
       ],
     },
 
-    // Hosting date
+    // From date
     {
-      name: "date",
-      title: "Date",
+      name: "from_date",
+      title: "From date",
+      type: "date",
+    },
+
+    // To date
+    {
+      name: "to_date",
+      title: "To date",
       type: "date",
     },
   ],

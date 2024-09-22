@@ -59,7 +59,8 @@ export async function getEvents(): Promise<EventsType[]> {
     venue,
     location_on_google_maps,
     "cardImage": card_image{asset->{url}, alt},
-    date
+    from_date,
+    to_date
   }`,
     {},
     { next: { revalidate: 120 } }
@@ -79,7 +80,8 @@ export async function getEventBySlug(slug: string): Promise<EventsType> {
     venue,
     location_on_google_maps,
     "cardImage": card_image{asset->{url}, alt},
-    date
+    from_date,
+    to_date
   }`,
     { slug },
     { next: { revalidate: 120 } }
