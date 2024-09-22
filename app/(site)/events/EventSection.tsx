@@ -51,7 +51,7 @@ export default function EventSection() {
     };
 
     fetchEvents();
-  }, []);
+  });
 
   const totalPages = Math.ceil(eventsData.length / ITEMS_PER_PAGE);
 

@@ -46,7 +46,7 @@ export default function NewsSection() {
       setNewsData(data);
     };
     fetchNews();
-  }, []);
+  });
 
   const totalPages = Math.ceil(newsData.length / ITEMS_PER_PAGE);
 

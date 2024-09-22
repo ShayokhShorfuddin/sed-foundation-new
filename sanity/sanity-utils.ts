@@ -10,7 +10,8 @@ export async function getNews(): Promise<NewsType[]> {
     apiVersion: "2024-09-21", // Use current date (UTC format yyyy-mm-dd)
   });
 
-  return client.fetch(groq`*[_type == "news"]{
+  return client.fetch(
+    groq`*[_type == "news"]{
     _id,
     _createdAt,
     title,
@@ -18,7 +19,10 @@ export async function getNews(): Promise<NewsType[]> {
     content,
     "cardImage": card_image{asset->{url}, alt},
     date
-  }`);
+  }`,
+    {},
+    { next: { revalidate: 60 } }
+  );
 }
 
 export async function getNewsBySlug(slug: string): Promise<NewsType> {
@@ -39,7 +43,8 @@ export async function getNewsBySlug(slug: string): Promise<NewsType> {
     "cardImage": card_image{asset->{url}, alt},
     date
   }`,
-    { slug }
+    { slug },
+    { next: { revalidate: 60 } }
   );
 }
 
@@ -51,7 +56,8 @@ export async function getEvents(): Promise<EventsType[]> {
     apiVersion: "2024-09-21", // Use current date (UTC format yyyy-mm-dd)
   });
 
-  return client.fetch(groq`*[_type == "events"]{
+  return client.fetch(
+    groq`*[_type == "events"]{
     _id,
     _createdAt,
     title,
@@ -61,7 +67,10 @@ export async function getEvents(): Promise<EventsType[]> {
     location_on_google_maps,
     "cardImage": card_image{asset->{url}, alt},
     date
-  }`);
+  }`,
+    {},
+    { next: { revalidate: 60 } }
+  );
 }
 
 export async function getEventBySlug(slug: string): Promise<EventsType> {
@@ -84,6 +93,7 @@ export async function getEventBySlug(slug: string): Promise<EventsType> {
     "cardImage": card_image{asset->{url}, alt},
     date
   }`,
-    { slug }
+    { slug },
+    { next: { revalidate: 60 } }
   );
 }
