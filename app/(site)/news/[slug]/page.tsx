@@ -1,6 +1,6 @@
 import Navbar from "../../Navbar";
 import { getNewsBySlug } from "@/sanity/sanity-utils";
-import { PortableText } from "next-sanity";
+import { PortableText, PortableTextComponents } from "next-sanity";
 import { NewsType } from "../NewsSection";
 
 type Props = {
@@ -18,6 +18,15 @@ export default async function Page({ params }: Props) {
   );
 }
 
+const components: PortableTextComponents = {
+  block: {
+    // Custom serializer for paragraphs
+    normal: ({ children }) => (
+      <p className="mb-6">{children}</p> // Add margin for spacing
+    ),
+  },
+};
+
 function NewsContent({ news }: { news: NewsType }) {
   return (
     <section className="container flex flex-col max-w-[65rem] mt-5 mb-10">
@@ -34,7 +43,7 @@ function NewsContent({ news }: { news: NewsType }) {
       </span>
 
       <div className="mt-10">
-        <PortableText value={news.content} />
+        <PortableText value={news.content} components={components} />
       </div>
     </section>
   );
