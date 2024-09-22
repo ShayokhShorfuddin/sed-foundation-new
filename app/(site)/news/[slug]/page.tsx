@@ -38,9 +38,9 @@ function NewsContent({ news }: { news: NewsType }) {
 
       <h1 className="text-lg md:text-xl lg:text-2xl mt-8">{news.title}</h1>
 
-      <span className="px-3 py-1 border border-sedGreen w-min rounded-full text-sm mt-5">
+      <p className="px-3 py-1 border border-sedGreen w-min rounded-full text-sm mt-5">
         {new Intl.DateTimeFormat("en-GB").format(new Date(news.date))}
-      </span>
+      </p>
 
       <div className="mt-10">
         <PortableText value={news.content} components={components} />
