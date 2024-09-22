@@ -1,7 +1,10 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
-import Events from "./_images/events.jpg";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { PortableTextBlock } from "sanity";
+import { PortableText } from "next-sanity";
+
 import {
   Pagination,
   PaginationContent,
@@ -9,126 +12,45 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+
+import { getEvents } from "@/sanity/sanity-utils";
 
 const ITEMS_PER_PAGE = 6;
 
-type EventsType = {
-  image: StaticImageData;
-  href: string;
+export type EventsType = {
+  _id: string;
+  _createdAt: Date;
+
   title: string;
-  description: string;
+  slug: string;
+  content: PortableTextBlock[];
+
+  venue: string;
+  location_on_google_maps: string;
+
+  cardImage: {
+    asset: {
+      url: string;
+    };
+    alt: string;
+  };
+
+  date: Date;
 };
 
 export default function EventSection() {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
-  const eventsData: EventsType[] = [
-    {
-      image: Events,
-      href: "/",
-      title: "Event1",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
+  const [eventsData, setEventsData] = useState<EventsType[]>([]);
 
-    {
-      image: Events,
-      href: "/",
-      title: "Event2",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const data = await getEvents();
+      setEventsData(data);
+    };
 
-    {
-      image: Events,
-      href: "/",
-      title: "Event3",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event4",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event5",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event6",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event7",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event8",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event9",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event10",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event11",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event12",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-
-    {
-      image: Events,
-      href: "/",
-      title: "Event13",
-      description:
-        "Forests cover hills with tall trees. Rivers flow through green valleys. Plants grow in fields and by lakes. Mountains rise high, with snowy tops. Animals live in woods and grasslands. Flowers bloom in meadows. Oceans have sandy beaches. Deserts are hot and dry. Rainforests are wet and full of life.",
-    },
-  ];
+    fetchEvents();
+  }, []);
 
   const totalPages = Math.ceil(eventsData.length / ITEMS_PER_PAGE);
 
@@ -187,10 +109,13 @@ function EventsGrid({
         {displayedEvents.map((event, index) => (
           <NewsCard
             key={index}
-            image={event.image}
-            href={event.href}
+            image={event.cardImage.asset.url}
+            alt={event.cardImage.alt}
+            venue={event.venue}
+            location_on_google_maps={event.location_on_google_maps}
+            href={event.slug}
             title={event.title}
-            description={event.description}
+            content={event.content}
           />
         ))}
       </div>
@@ -200,27 +125,31 @@ function EventsGrid({
 
 function NewsCard({
   image,
+  alt,
+  venue,
+  location_on_google_maps,
   href,
   title,
-  description,
+  content,
 }: {
-  image: StaticImageData;
+  image: string;
+  alt: string;
+  venue: string;
+  location_on_google_maps: string;
   href: string;
   title: string;
-  description: string;
+  content: PortableTextBlock[];
 }) {
   return (
-    <Link href={href}>
+    <Link href={`/events/${href}`}>
       <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out">
-        <Image
-          src={image}
-          alt="forest"
-          className="rounded-xl"
-          placeholder="blur"
-        />
+        <img src={image} alt={alt} className="rounded-xl" />
 
-        <h1 className="mt-7 text-xl">{title}</h1>
-        <p className="font-sans mt-2 line-clamp-5">{description}</p>
+        <h1 className="mt-5 text-xl">{title}</h1>
+
+        <div className="font-sans mt-6 line-clamp-5">
+          <PortableText value={content} />
+        </div>
       </div>
     </Link>
   );

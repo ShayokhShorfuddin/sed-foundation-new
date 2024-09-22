@@ -13,7 +13,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-import { getProjects } from "@/sanity/sanity-utils";
+import { getNews } from "@/sanity/sanity-utils";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -42,7 +42,7 @@ export default function NewsSection() {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const data = await getProjects();
+      const data = await getNews();
       setNewsData(data);
     };
     fetchNews();
@@ -136,6 +136,7 @@ function NewsCard({
         <img src={image} alt={alt} className="rounded-xl" />
 
         <h1 className="mt-5 text-xl">{title}</h1>
+
         <div className="font-sans mt-6 line-clamp-5">
           <PortableText value={content} />
         </div>
