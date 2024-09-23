@@ -84,6 +84,11 @@ const eventsSchema = {
       title: "From date",
       type: "date",
 
+      // For the CMS date display
+      options: {
+        dateFormat: "DD/MM/YYYY",
+      },
+
       validation: (rule: any) => rule.required(),
     },
 
@@ -92,6 +97,11 @@ const eventsSchema = {
       name: "to_date",
       title: "To date",
       type: "date",
+
+      // For the CMS date display
+      options: {
+        dateFormat: "DD/MM/YYYY",
+      },
 
       // Making sure that "to date" is in future compared to "from date"
       validation: (rule: any) =>

@@ -41,11 +41,10 @@ function EventContent({ event }: { event: EventsType }) {
       <h1 className="text-lg md:text-xl lg:text-2xl mt-8">{event.title}</h1>
 
       <div className="flex items-center mt-5">
-        {event.date && (
-          <p className="px-3 py-1 border border-sedGreen w-min rounded-full text-sm mr-3">
-            {new Intl.DateTimeFormat("en-GB").format(new Date(event.date))}
-          </p>
-        )}
+        <p className="px-3 py-1 border border-sedGreen w-min rounded-full text-sm mr-3">
+          {event.from_date}
+          {/* {new Intl.DateTimeFormat("en-GB").format(new Date(event.date))} */}
+        </p>
 
         <div className="flex text-gray-800">
           <MapPin className="mr-2" />
