@@ -9,6 +9,7 @@ const eventsSchema = {
       name: "title",
       title: "Title",
       type: "string",
+
       validation: (rule: any) => rule.required(),
     },
 
