@@ -48,7 +48,7 @@ function EventContent({ event }: { event: EventsType }) {
         />
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 text-sm sm:text-base">
         <PortableText value={event.content} components={components} />
       </div>
     </section>
