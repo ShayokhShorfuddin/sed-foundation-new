@@ -14,7 +14,7 @@ export async function getEvents(): Promise<EventsType[]> {
   const client = createClient(ClientConfig);
 
   return client.fetch(
-    groq`*[_type == "events"]{
+    groq`*[_type == "events"] | order(_createdAt desc){
     _id,
     _createdAt,
     title,
