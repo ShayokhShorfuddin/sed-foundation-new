@@ -137,7 +137,7 @@ function NewsCard({
 
         <h1 className="mt-5 text-xl">{title}</h1>
 
-        <div className="font-sans mt-6 line-clamp-5">
+        <div className="font-sans mt-5 line-clamp-5">
           <PortableText value={content} />
         </div>
       </div>

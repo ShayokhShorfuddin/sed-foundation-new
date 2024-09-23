@@ -156,6 +156,7 @@ function EventsCard({
     <Link href={`/events/${href}`}>
       <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out h-full">
         <img src={image} alt={alt} className="rounded-xl" />
+
         <h1 className="mt-5 text-xl">{title}</h1>
 
         {isUpcoming && <UpcomingTag />}
