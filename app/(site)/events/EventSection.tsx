@@ -161,7 +161,7 @@ function EventsCard({
         {isUpcoming && <UpcomingTag />}
         {isOngoing && <OngoingTag />}
 
-        <div className="font-sans mt-6 line-clamp-5">
+        <div className="font-sans mt-5 line-clamp-5">
           <PortableText value={content} />
         </div>
       </div>
@@ -182,7 +182,7 @@ function UpcomingTag() {
 // For events happening now
 function OngoingTag() {
   return (
-    <div className="flex mt-1 text-gray-400">
+    <div className="flex mt-1 text-gray-600">
       <Clock className="mr-2" />
       <p>Ongoing</p>
     </div>
