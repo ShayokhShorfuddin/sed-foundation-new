@@ -99,8 +99,8 @@ const eventsSchema = {
           const fromDate = context.document?.from_date;
 
           return (
-            new Date(toDate) > new Date(fromDate) ||
-            "To date must be after From date"
+            new Date(toDate) >= new Date(fromDate) ||
+            "'To date' must be equal to or in future compared to 'From date'"
           );
         }),
     },
