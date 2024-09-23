@@ -117,6 +117,7 @@ function EventsGrid({
             title={event.title}
             content={event.content}
             fromDate={event.from_date}
+            toDate={event.to_date}
           />
         ))}
       </div>
@@ -131,6 +132,7 @@ function EventsCard({
   title,
   content,
   fromDate,
+  toDate,
 }: {
   image: string;
   alt: string;
@@ -138,16 +140,26 @@ function EventsCard({
   title: string;
   content: PortableTextBlock[];
   fromDate: Date;
+  toDate: Date;
 }) {
-  const isUpcoming = new Date(fromDate) > new Date(); // Check if the event date is in the future compared to users local machine time
+  const today = new Date();
+  const eventStartDate = new Date(fromDate);
+  const eventEndDate = new Date(toDate);
+
+  // Set the end date to the end of the day (23:59:59.999)
+  eventEndDate.setHours(23, 59, 59, 999);
+
+  const isUpcoming = eventStartDate > today;
+  const isOngoing = today >= eventStartDate && today <= eventEndDate;
 
   return (
     <Link href={`/events/${href}`}>
-      <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out">
+      <div className="flex flex-col rounded-2xl p-5 border border-gray-100 hover:border-sedGreen transition duration-300 ease-in-out h-full">
         <img src={image} alt={alt} className="rounded-xl" />
         <h1 className="mt-5 text-xl">{title}</h1>
 
         {isUpcoming && <UpcomingTag />}
+        {isOngoing && <OngoingTag />}
 
         <div className="font-sans mt-6 line-clamp-5">
           <PortableText value={content} />
@@ -157,11 +169,22 @@ function EventsCard({
   );
 }
 
+// For events coming in future
 function UpcomingTag() {
   return (
     <div className="flex mt-1 text-sedGreen">
       <Clock className="mr-2" />
       <p>Upcoming</p>
+    </div>
+  );
+}
+
+// For events happening now
+function OngoingTag() {
+  return (
+    <div className="flex mt-1 text-gray-400">
+      <Clock className="mr-2" />
+      <p>Ongoing</p>
     </div>
   );
 }
