@@ -37,6 +37,8 @@ export type EventsType = {
   };
 
   date: Date;
+  from_date: Date;
+  to_date: Date;
 };
 
 export default function EventSection() {
