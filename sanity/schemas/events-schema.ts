@@ -93,7 +93,16 @@ const eventsSchema = {
       title: "To date",
       type: "date",
 
-      validation: (rule: any) => rule.required(),
+      // Making sure that "to date" is in future compared to "from date"
+      validation: (rule: any) =>
+        rule.required().custom((toDate: string, context: any) => {
+          const fromDate = context.document?.from_date;
+
+          return (
+            new Date(toDate) > new Date(fromDate) ||
+            "To date must be after From date"
+          );
+        }),
     },
   ],
 };
