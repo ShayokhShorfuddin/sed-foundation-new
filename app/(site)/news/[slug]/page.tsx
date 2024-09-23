@@ -1,5 +1,5 @@
 import Navbar from "../../Navbar";
-import { getNewsBySlug } from "@/sanity/sanity-utils";
+import { getNewsBySlug } from "@/sanity/utils/news-utils";
 import { PortableText, PortableTextComponents } from "next-sanity";
 import { NewsType } from "../NewsSection";
 

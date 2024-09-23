@@ -13,7 +13,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-import { getEvents } from "@/sanity/sanity-utils";
+import { getEvents } from "@/sanity/utils/events-utils";
 import { Clock } from "lucide-react";
 
 const ITEMS_PER_PAGE = 6;

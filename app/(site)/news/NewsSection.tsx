@@ -13,7 +13,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-import { getNews } from "@/sanity/sanity-utils";
+import { getNews } from "@/sanity/utils/news-utils";
 
 const ITEMS_PER_PAGE = 6;
 

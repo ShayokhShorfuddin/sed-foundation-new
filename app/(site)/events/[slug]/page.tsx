@@ -1,5 +1,5 @@
 import Navbar from "../../Navbar";
-import { getEventBySlug } from "@/sanity/sanity-utils";
+import { getEventBySlug } from "@/sanity/utils/events-utils";
 import { PortableText, PortableTextComponents } from "next-sanity";
 import { EventsType } from "../EventSection";
 import { MapPin } from "lucide-react";
