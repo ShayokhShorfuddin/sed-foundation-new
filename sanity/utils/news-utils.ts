@@ -14,7 +14,7 @@ export async function getNews(): Promise<NewsType[]> {
   const client = createClient(ClientConfig);
 
   return client.fetch(
-    groq`*[_type == "news"]{
+    groq`*[_type == "news"] | order(_createdAt desc){
     _id,
     _createdAt,
     title,
