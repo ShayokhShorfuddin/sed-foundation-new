@@ -42,7 +42,7 @@ function NewsContent({ news }: { news: NewsType }) {
         {new Intl.DateTimeFormat("en-GB").format(new Date(news.date))}
       </p>
 
-      <div className="mt-10">
+      <div className="mt-10 text-sm sm:text-base">
         <PortableText value={news.content} components={components} />
       </div>
     </section>
