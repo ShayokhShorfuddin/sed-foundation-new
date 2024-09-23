@@ -1,5 +1,4 @@
 import { EventsType } from "@/app/(site)/events/EventSection";
-import { NewsType } from "@/app/(site)/news/NewsSection";
 import { createClient, groq } from "next-sanity";
 
 const ClientConfig = {
@@ -10,42 +9,7 @@ const ClientConfig = {
   apiVersion: "2024-09-21", // Use current date (UTC format yyyy-mm-dd)
 };
 
-export async function getNews(): Promise<NewsType[]> {
-  const client = createClient(ClientConfig);
-
-  return client.fetch(
-    groq`*[_type == "news"]{
-    _id,
-    _createdAt,
-    title,
-    "slug": slug.current,
-    content,
-    "cardImage": card_image{asset->{url}, alt},
-    date
-  }`,
-    {},
-    { next: { revalidate: 120 } }
-  );
-}
-
-export async function getNewsBySlug(slug: string): Promise<NewsType> {
-  const client = createClient(ClientConfig);
-
-  return client.fetch(
-    groq`*[_type == "news" && slug.current == $slug][0]{
-    _id,
-    _createdAt,
-    title,
-    "slug": slug.current,
-    content,
-    "cardImage": card_image{asset->{url}, alt},
-    date
-  }`,
-    { slug },
-    { next: { revalidate: 120 } }
-  );
-}
-
+// Fetch all the events
 export async function getEvents(): Promise<EventsType[]> {
   const client = createClient(ClientConfig);
 
@@ -67,6 +31,7 @@ export async function getEvents(): Promise<EventsType[]> {
   );
 }
 
+// Get one single event using slug
 export async function getEventBySlug(slug: string): Promise<EventsType> {
   const client = createClient(ClientConfig);
 
