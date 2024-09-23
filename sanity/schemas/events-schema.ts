@@ -9,6 +9,7 @@ const eventsSchema = {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
 
     // Slug for the event (auto-generated from title). Looks like this: /events/my-event-title
@@ -16,10 +17,13 @@ const eventsSchema = {
       name: "slug",
       title: "Slug",
       type: "slug",
+
       options: {
         source: "title", // Uses the title as the slug
         maxLength: 96,
       },
+
+      validation: (rule: any) => rule.required(),
     },
 
     // Content of the event
@@ -27,7 +31,10 @@ const eventsSchema = {
       name: "content",
       title: "Content",
       type: "array",
+
       of: [{ type: "block" }], // Allows for rich text content
+
+      validation: (rule: any) => rule.required(),
     },
 
     // Venue of the event
@@ -35,6 +42,8 @@ const eventsSchema = {
       name: "venue",
       title: "Venue",
       type: "string",
+
+      validation: (rule: any) => rule.required(),
     },
 
     // Location on Google Maps
@@ -42,6 +51,8 @@ const eventsSchema = {
       name: "location_on_google_maps",
       title: "Location on Google Maps",
       type: "url",
+
+      validation: (rule: any) => rule.required(),
     },
 
     // Card image (acts as thumbnail)
@@ -49,9 +60,12 @@ const eventsSchema = {
       name: "card_image",
       title: "Card image",
       type: "image",
+
       options: {
         hotspot: true,
       },
+
+      validation: (rule: any) => rule.required(),
 
       // The alt text for the card image
       fields: [
@@ -68,6 +82,8 @@ const eventsSchema = {
       name: "from_date",
       title: "From date",
       type: "date",
+
+      validation: (rule: any) => rule.required(),
     },
 
     // To date
@@ -75,6 +91,8 @@ const eventsSchema = {
       name: "to_date",
       title: "To date",
       type: "date",
+
+      validation: (rule: any) => rule.required(),
     },
   ],
 };
