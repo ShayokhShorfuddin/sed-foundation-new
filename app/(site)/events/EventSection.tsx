@@ -36,7 +36,6 @@ export type EventsType = {
     alt: string;
   };
 
-  date: Date;
   from_date: Date;
   to_date: Date;
 };
@@ -114,12 +113,10 @@ function EventsGrid({
             key={index}
             image={event.cardImage.asset.url}
             alt={event.cardImage.alt}
-            venue={event.venue}
-            location_on_google_maps={event.location_on_google_maps}
             href={event.slug}
             title={event.title}
             content={event.content}
-            date={event.date}
+            fromDate={event.from_date}
           />
         ))}
       </div>
@@ -130,23 +127,19 @@ function EventsGrid({
 function EventsCard({
   image,
   alt,
-  venue,
-  location_on_google_maps,
   href,
   title,
   content,
-  date,
+  fromDate,
 }: {
   image: string;
   alt: string;
-  venue: string;
-  location_on_google_maps: string;
   href: string;
   title: string;
   content: PortableTextBlock[];
-  date: Date;
+  fromDate: Date;
 }) {
-  const isUpcoming = new Date(date) > new Date(); // Check if the event date is in the future
+  const isUpcoming = new Date(fromDate) > new Date(); // Check if the event date is in the future compared to users local machine time
 
   return (
     <Link href={`/events/${href}`}>
