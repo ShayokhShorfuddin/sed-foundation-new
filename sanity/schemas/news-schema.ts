@@ -66,6 +66,11 @@ const newsSchema = {
       title: "Date",
       type: "date",
 
+      // For the CMS date display
+      options: {
+        dateFormat: "DD/MM/YYYY",
+      },
+
       validation: (rule: any) => rule.required(),
     },
   ],
