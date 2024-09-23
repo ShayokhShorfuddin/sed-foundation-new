@@ -1,16 +1,16 @@
-// import Navbar from "../Navbar";
-// import Hero from "./Hero";
-// import Info from "./Info";
+import Navbar from "../Navbar";
+import Hero from "./Hero";
+import Info from "./Info";
 
-// export default function Page() {
-//   return (
-//     <main>
-//       <Navbar />
-//       <Hero />
-//       <Info />
-//     </main>
-//   );
-// }
+export default function Page() {
+  return (
+    <main>
+      <Navbar />
+      <Hero />
+      <Info />
+    </main>
+  );
+}
 
 // Please give us your enormous support to fulfill our objective and make the environment safe and healthy.
 
