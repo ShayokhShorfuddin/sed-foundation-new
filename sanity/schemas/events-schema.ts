@@ -74,6 +74,8 @@ const eventsSchema = {
           name: "alt",
           title: "Alt",
           type: "string",
+
+          validation: (rule: any) => rule.required(),
         },
       ],
     },

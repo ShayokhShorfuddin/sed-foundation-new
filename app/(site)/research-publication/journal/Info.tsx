@@ -5,6 +5,8 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, Tab } from "@nextui-org/tabs";
 
+import Archive from "./Archive";
+
 import {
   Command,
   CommandGroup,
@@ -66,10 +68,6 @@ function EditorialBoard() {
 
 function SubmissionGuideline() {
   return <p>Submission stuffs go here</p>;
-}
-
-function Archive() {
-  return <p>Archive goes here</p>;
 }
 
 function CallForPaper() {
