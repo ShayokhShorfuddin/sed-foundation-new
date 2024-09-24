@@ -22,7 +22,7 @@ const components: PortableTextComponents = {
   block: {
     // Custom serializer for paragraphs
     normal: ({ children }) => (
-      <p className="mb-6">{children}</p> // Add margin for spacing
+      <p className="mb-6 leading-relaxed">{children}</p> // Add margin for spacing
     ),
   },
 };
