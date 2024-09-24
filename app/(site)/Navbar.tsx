@@ -72,7 +72,7 @@ export default function Navbar() {
               </li>
 
               <li>
-                <Link href={"/"}>About</Link>
+                <Link href={"/about-us"}>About</Link>
               </li>
 
               <li>
@@ -180,7 +180,7 @@ export function Navlinks() {
             asChild
             className="mr-4 md:mr-7 hover:text-sedGreen transition duration-160 ease-in-out"
           >
-            <Link href={"/"}>About</Link>
+            <Link href={"/about-us"}>About</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 

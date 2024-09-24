@@ -41,7 +41,7 @@ export default function Footer() {
             Home
           </Link>
           <Link
-            href={"/"}
+            href={"/about-us"}
             className="hover:text-sedGreen transition duration-160 ease-in-out mt-2 text-sm text-gray-600"
           >
             About
