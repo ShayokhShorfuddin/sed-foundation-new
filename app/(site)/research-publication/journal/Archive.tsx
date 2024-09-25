@@ -1,3 +1,5 @@
+"use client";
+
 import { getIssues } from "@/sanity/utils/issues-utils";
 import Image from "next/image";
 import Link from "next/link";
