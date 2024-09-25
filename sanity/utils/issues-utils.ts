@@ -42,13 +42,14 @@ export async function getIssueWithDetails(slug: string): Promise<IssuesType> {
     "slug": slug.current,
     coordinators,
     "cardImage": card_image{asset->{url}, alt},
-    pdf,
+    "pdfUrl": pdf.asset->url,
+    
     articles[] {
       title,
       authors,
       keywords,
       abstract,
-      pdf
+      "pdfUrl": pdf.asset->url
     }
   }`,
     { slug },

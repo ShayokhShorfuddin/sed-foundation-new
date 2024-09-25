@@ -36,7 +36,7 @@ export type IssuesType = {
     alt: string;
   };
 
-  pdf: File;
+  pdfUrl: string;
 
   articles: {
     // Articles field
