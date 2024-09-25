@@ -27,7 +27,7 @@ export async function getEvents(): Promise<EventsType[]> {
     to_date
   }`,
     {},
-    { next: { revalidate: 120 } }
+    { cache: "no-store" }
   );
 }
 
@@ -49,6 +49,6 @@ export async function getEventBySlug(slug: string): Promise<EventsType> {
     to_date
   }`,
     { slug },
-    { next: { revalidate: 120 } }
+    { cache: "no-store" }
   );
 }

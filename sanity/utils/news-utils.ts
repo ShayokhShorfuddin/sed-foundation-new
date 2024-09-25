@@ -24,7 +24,7 @@ export async function getNews(): Promise<NewsType[]> {
     date
   }`,
     {},
-    { next: { revalidate: 120 } }
+    { cache: "no-store" }
   );
 }
 
@@ -43,6 +43,6 @@ export async function getNewsBySlug(slug: string): Promise<NewsType> {
     date
   }`,
     { slug },
-    { next: { revalidate: 120 } }
+    { cache: "no-store" }
   );
 }

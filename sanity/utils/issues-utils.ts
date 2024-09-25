@@ -26,7 +26,7 @@ export async function getIssues(): Promise<IssuesCardType[]> {
     "cardImage": card_image{asset->{url}, alt},
   }`,
     {},
-    { next: { revalidate: 120 } }
+    { cache: "no-store" }
   );
 }
 
@@ -52,6 +52,6 @@ export async function getIssueWithDetails(slug: string): Promise<IssuesType> {
     }
   }`,
     { slug },
-    { next: { revalidate: 120 } }
+    { cache: "no-store" }
   );
 }

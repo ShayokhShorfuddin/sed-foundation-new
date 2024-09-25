@@ -17,7 +17,6 @@ export default async function Page({ params }: Props) {
   );
 }
 
-// TODO: Error
 function IssuesContent({ issue }: { issue: IssuesType }) {
   return <p>{issue.title}</p>;
 }
