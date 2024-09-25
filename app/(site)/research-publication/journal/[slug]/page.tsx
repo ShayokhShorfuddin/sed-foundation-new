@@ -23,17 +23,18 @@ function IssuesContent({ issue }: { issue: IssuesType }) {
   return (
     <section className="container flex flex-col items-center max-w-5xl mt-5 mb-10">
       <BookCoverWithDetails issue={issue} />
+      <AllArticles issue={issue} />
     </section>
   );
 }
 
 function BookCoverWithDetails({ issue }: { issue: IssuesType }) {
   return (
-    <div className="flex gap-x-8">
+    <div className="flex flex-col sm:flex-row gap-y-8 sm:gap-x-8 max-w-full">
       <img
         src={issue.cardImage.asset.url}
         alt={issue.cardImage.alt}
-        className="object-scale-down max-w-80 border border-sedGreen rounded-lg"
+        className="sm:object-scale-down max-w-80 border border-sedGreen rounded-lg"
       />
 
       <TextDetails issue={issue} />
@@ -65,11 +66,39 @@ function TextDetails({ issue }: { issue: IssuesType }) {
         ))}
       </div>
 
-      <Link href={`${issue.pdfUrl}?dl=${issue.title}.pdf`} download>
-        <Button size="sm" className="w-min mt-7 bg-sedGreen">
+      <Link
+        href={`${issue.pdfUrl}?dl=${issue.title}.pdf`}
+        download
+        className="w-min mt-10 self-center sm:self-start"
+      >
+        <Button size="sm" className="bg-sedGreen">
           Download
         </Button>
       </Link>
     </div>
+  );
+}
+
+function AllArticles({ issue }: { issue: IssuesType }) {
+  return (
+    <section className="flex flex-col mt-20 gap-y-20">
+      {issue.articles.map((article) => (
+        <div key={article.title} className="flex flex-col">
+          <h2 className="text-2xl text-sedGreen font-sans">{article.title}</h2>
+          <p className="mt-1">{article.authors.join(", ")}</p>
+          <p className="mt-7 text-sm xs:text-base">{article.abstract}</p>
+
+          <Link
+            href={`${issue.pdfUrl}?dl=${article.title}.pdf`}
+            download
+            className="w-min mt-5"
+          >
+            <Button size="sm" className="bg-sedGreen">
+              Download
+            </Button>
+          </Link>
+        </div>
+      ))}
+    </section>
   );
 }
