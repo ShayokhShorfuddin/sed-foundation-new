@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, Tab } from "@nextui-org/tabs";
+import { Suspense } from "react";
 
 import Archive from "./Archive";
 
@@ -67,6 +68,14 @@ const comboOptions: ComboOption[] = [
 ];
 
 export default function Info() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <InfoContent />
+    </Suspense>
+  );
+}
+
+function InfoContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<string>("editorial-board");
