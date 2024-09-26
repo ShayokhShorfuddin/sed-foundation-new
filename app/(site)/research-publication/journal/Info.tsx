@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, Tab } from "@nextui-org/tabs";
@@ -19,16 +20,19 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-export default function Info() {
-  return (
-    <section className="container mb-20">
-      <TabSection />
-      <ComboSection />
-    </section>
-  );
+interface TabOption {
+  key: string;
+  title: string;
+  content: React.ReactNode;
 }
 
-const tabOptions = [
+interface ComboOption {
+  value: string;
+  label: string;
+  component: React.ReactNode;
+}
+
+const tabOptions: TabOption[] = [
   {
     key: "editorial-board",
     title: "Editorial Board",
@@ -43,7 +47,7 @@ const tabOptions = [
   { key: "call-for-paper", title: "Call for paper", content: <CallForPaper /> },
 ];
 
-const comboOptions = [
+const comboOptions: ComboOption[] = [
   { value: "archive", label: "Archive", component: <Archive /> },
   {
     value: "editorial-board",
@@ -62,6 +66,31 @@ const comboOptions = [
   },
 ];
 
+export default function Info() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [activeTab, setActiveTab] = useState<string>("editorial-board");
+
+  useEffect(() => {
+    const tab = searchParams.get("tab");
+    if (tab && tabOptions.some((option) => option.key === tab)) {
+      setActiveTab(tab);
+    }
+  }, [searchParams]);
+
+  const handleTabChange = (key: string) => {
+    setActiveTab(key);
+    router.push(`?tab=${key}`, { scroll: false });
+  };
+
+  return (
+    <section className="container mb-20">
+      <TabSection activeTab={activeTab} onTabChange={handleTabChange} />
+      <ComboSection activeTab={activeTab} onTabChange={handleTabChange} />
+    </section>
+  );
+}
+
 function EditorialBoard() {
   return <p>Editors go here</p>;
 }
@@ -74,10 +103,20 @@ function CallForPaper() {
   return <p>Calling for papers lol</p>;
 }
 
-function TabSection() {
+interface TabSectionProps {
+  activeTab: string;
+  onTabChange: (key: string) => void;
+}
+
+function TabSection({ activeTab, onTabChange }: TabSectionProps) {
   return (
     <section className="hidden sm:flex flex-col justify-center items-center mt-10">
-      <Tabs aria-label="Options" size="md">
+      <Tabs
+        aria-label="Options"
+        size="md"
+        selectedKey={activeTab}
+        onSelectionChange={(key) => onTabChange(key as string)}
+      >
         {tabOptions.map(({ key, title, content }) => (
           <Tab key={key} title={title}>
             {content}
@@ -88,32 +127,32 @@ function TabSection() {
   );
 }
 
-function ComboSection() {
-  const [selectedValue, setSelectedValue] = useState("");
+interface ComboSectionProps {
+  activeTab: string;
+  onTabChange: (key: string) => void;
+}
 
+function ComboSection({ activeTab, onTabChange }: ComboSectionProps) {
   return (
     <section className="flex sm:hidden flex-col justify-center items-center">
-      <ComboboxDemo onValueChange={setSelectedValue} />
+      <ComboboxDemo value={activeTab} onValueChange={onTabChange} />
 
-      {selectedValue && (
+      {activeTab && (
         <div className="mt-5">
-          {
-            comboOptions.find((option) => option.value === selectedValue)
-              ?.component
-          }
+          {comboOptions.find((option) => option.value === activeTab)?.component}
         </div>
       )}
     </section>
   );
 }
 
-function ComboboxDemo({
-  onValueChange,
-}: {
+interface ComboboxDemoProps {
+  value: string;
   onValueChange: (value: string) => void;
-}) {
+}
+
+function ComboboxDemo({ value, onValueChange }: ComboboxDemoProps) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -140,7 +179,6 @@ function ComboboxDemo({
                   key={option.value}
                   value={option.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
                     onValueChange(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}
