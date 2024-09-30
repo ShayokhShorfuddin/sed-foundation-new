@@ -44,7 +44,7 @@ export type IssuesType = {
     authors: string[];
     keywords: string[];
     abstract: string;
-    pdf: File;
+    pdfUrl: string;
   }[];
 };
 

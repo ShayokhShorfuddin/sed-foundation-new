@@ -104,7 +104,7 @@ function AllArticles({ issue }: { issue: IssuesType }) {
           <p className="text-sm xs:text-base mt-1">{article.abstract}</p>
 
           <Link
-            href={`${issue.pdfUrl}?dl=${article.title}.pdf`}
+            href={`${article.pdfUrl}?dl=${article.title}.pdf`}
             download
             className="w-min mt-5"
           >
