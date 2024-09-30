@@ -86,11 +86,15 @@ function TextDetails({ issue }: { issue: IssuesType }) {
 function AllArticles({ issue }: { issue: IssuesType }) {
   return (
     <section className="flex flex-col mt-20 gap-y-20">
-      {issue.articles.map((article) => (
+      {issue.articles.map((article, index) => (
         <div key={article.title} className="flex flex-col">
-          <h2 className="text-2xl text-sedGreen font-sans">{article.title}</h2>
+          <h2 className="text-2xl text-sedGreen font-sans">
+            {`${index + 1}. ${article.title}`}
+          </h2>
           <p className="mt-1">{article.authors.join(", ")}</p>
-          <p className="mt-7 text-sm xs:text-base">{article.abstract}</p>
+
+          <p className="text-sedGreen mt-7">Abstract</p>
+          <p className="text-sm xs:text-base mt-1">{article.abstract}</p>
 
           <Link
             href={`${issue.pdfUrl}?dl=${article.title}.pdf`}
