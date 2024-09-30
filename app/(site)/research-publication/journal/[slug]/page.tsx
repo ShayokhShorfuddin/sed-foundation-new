@@ -93,6 +93,13 @@ function AllArticles({ issue }: { issue: IssuesType }) {
           </h2>
           <p className="mt-1">{article.authors.join(", ")}</p>
 
+          <p className="text-sedGreen mt-7">
+            {article.keywords.length > 1 ? "Keywords" : "Keyword"}
+          </p>
+          <p className="text-sm xs:text-base mt-1">
+            {article.keywords.join(", ")}
+          </p>
+
           <p className="text-sedGreen mt-7">Abstract</p>
           <p className="text-sm xs:text-base mt-1">{article.abstract}</p>
 
