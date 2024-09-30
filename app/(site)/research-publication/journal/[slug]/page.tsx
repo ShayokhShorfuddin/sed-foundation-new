@@ -50,8 +50,8 @@ function TextDetails({ issue }: { issue: IssuesType }) {
       <div className="flex flex-col mt-7">
         <span className="text-sedGreen">
           {issue.coordinators.length > 1
-            ? "Editors in chief"
-            : "Editor in chief"}
+            ? "Editors-in-Chief"
+            : "Editor-in-Chief"}
         </span>
         <p>{issue.coordinators.join(", ")}</p>
       </div>
