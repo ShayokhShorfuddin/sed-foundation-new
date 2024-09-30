@@ -48,7 +48,11 @@ function TextDetails({ issue }: { issue: IssuesType }) {
       <h1 className="text-3xl font-sans">{issue.title}</h1>
 
       <div className="flex flex-col mt-7">
-        <span className="text-sedGreen">Coordinators</span>
+        <span className="text-sedGreen">
+          {issue.coordinators.length > 1
+            ? "Editors in chief"
+            : "Editor in chief"}
+        </span>
         <p>{issue.coordinators.join(", ")}</p>
       </div>
 
