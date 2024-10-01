@@ -11,7 +11,7 @@ export type IssuesCardType = {
 
   title: string;
   slug: string;
-  coordinators: string[];
+  coordinators: string;
 
   cardImage: {
     asset: {
@@ -27,7 +27,7 @@ export type IssuesType = {
 
   title: string;
   slug: string;
-  coordinators: string[];
+  coordinators: string;
 
   cardImage: {
     asset: {
@@ -41,8 +41,8 @@ export type IssuesType = {
   articles: {
     // Articles field
     title: string;
-    authors: string[];
-    keywords: string[];
+    authors: string;
+    keywords: string;
     abstract: string;
     pdfUrl: string;
   }[];
