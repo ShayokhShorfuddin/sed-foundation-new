@@ -49,11 +49,11 @@ function TextDetails({ issue }: { issue: IssuesType }) {
 
       <div className="flex flex-col mt-7">
         <span className="text-sedGreen">
-          {issue.coordinators.length > 1
+          {issue.coordinators.includes(",")
             ? "Editors-in-Chief"
             : "Editor-in-Chief"}
         </span>
-        <p>{issue.coordinators.join(", ")}</p>
+        <p>{issue.coordinators}</p>
       </div>
 
       <div className="flex flex-col mt-7">
@@ -91,14 +91,12 @@ function AllArticles({ issue }: { issue: IssuesType }) {
           <h2 className="text-2xl text-sedGreen font-sans">
             {`${index + 1}. ${article.title}`}
           </h2>
-          <p className="mt-1">{article.authors.join(", ")}</p>
+          <p className="mt-1">{article.authors}</p>
 
           <p className="text-sedGreen mt-7">
-            {article.keywords.length > 1 ? "Keywords" : "Keyword"}
+            {article.keywords.includes(",") ? "Keywords" : "Keyword"}
           </p>
-          <p className="text-sm xs:text-base mt-1">
-            {article.keywords.join(", ")}
-          </p>
+          <p className="text-sm xs:text-base mt-1">{article.keywords}</p>
 
           <p className="text-sedGreen mt-7">Abstract</p>
           <p className="text-sm xs:text-base mt-1">{article.abstract}</p>

@@ -83,10 +83,12 @@ function IssuesCard({ title, slug, coordinators, cardImage }: IssuesCardType) {
 
         <p className="mt-3 text-sm">
           <span className="text-sedGreen">
-            {coordinators.length > 1 ? "Editors-in-Chief" : "Editor-in-Chief"}
+            {coordinators.includes(",")
+              ? "Editors-in-Chief"
+              : "Editor-in-Chief"}
           </span>
           <br />
-          {coordinators.join(", ")}
+          {coordinators}
         </p>
       </div>
     </Link>
