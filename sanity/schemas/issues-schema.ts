@@ -31,9 +31,7 @@ const issuesSchema = {
     {
       name: "coordinators",
       title: "Coordinators",
-      type: "array",
-
-      of: [{ type: "string" }],
+      type: "string",
 
       validation: (rule: any) => rule.required(),
     },
@@ -94,9 +92,7 @@ const issuesSchema = {
             {
               name: "authors",
               title: "Authors",
-              type: "array",
-
-              of: [{ type: "string" }],
+              type: "string",
 
               validation: (rule: any) => rule.required(),
             },
@@ -105,9 +101,7 @@ const issuesSchema = {
             {
               name: "keywords",
               title: "Keywords",
-              type: "array",
-
-              of: [{ type: "string" }],
+              type: "string",
 
               validation: (rule: any) => rule.required(),
             },
