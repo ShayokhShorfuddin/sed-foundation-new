@@ -47,22 +47,22 @@ export default function Footer() {
             About
           </Link>
           <Link
-            href={"/"}
+            href={"/donation"}
             className="hover:text-sedGreen transition duration-160 ease-in-out mt-2 text-sm text-gray-600"
           >
-            Projects
+            Donation
           </Link>
           <Link
-            href={"/"}
+            href={"/news"}
             className="hover:text-sedGreen transition duration-160 ease-in-out mt-2 text-sm text-gray-600"
           >
             News
           </Link>
           <Link
-            href={"/"}
+            href={"/events"}
             className="hover:text-sedGreen transition duration-160 ease-in-out mt-2 text-sm text-gray-600"
           >
-            Contact
+            Events
           </Link>
         </div>
 
