@@ -98,7 +98,7 @@ export function Email() {
       <Mail className="mr-2" />
 
       <p className="hover:underline text-gray-600 text-sm">
-        <a href="mailto:someone@example.com">info@sedbd.org</a>
+        <a href="mailto:info@sedbd.org">info@sedbd.org</a>
       </p>
     </div>
   );
